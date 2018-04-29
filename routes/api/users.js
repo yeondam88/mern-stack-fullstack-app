@@ -1,4 +1,6 @@
 const express = require("express");
-const router = exporess.Router();
+const router = express.Router();
 
-router.get("/test", (req, res) => res.json());
+router.get("/test", (req, res) => res.json({ msg: "Users work!" }));
+
+module.exports = router;

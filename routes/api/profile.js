@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
 const validateProfileInput = require("../../validation/profile");
+const validateExperienceInput = require("../../validation/experience");
 
 /* Load Profile Model */
 const Profile = require("../../models/Profile");
@@ -12,19 +13,23 @@ const User = require("../../models/User");
 // @route GET api/profile/test
 // @desc Tests profile route
 // @access Public
-router.get("/test", (req, res) => res.json({ msg: "Profile work!" }));
+router.get("/test", (req, res) => res.json({
+  msg: "Profile work!"
+}));
 
 // @route GET api/profile
 // @desc Get current users profile
 // @access Private
 router.get(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("jwt", {
+    session: false
+  }),
   (req, res) => {
     const errors = {};
     Profile.findOne({
-      user: req.user.id
-    })
+        user: req.user.id
+      })
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -51,7 +56,9 @@ router.get("/all", (req, res) => {
       }
       res.json(profiles);
     })
-    .catch(err => res.status(404).json({ profile: "There are no profiles" }));
+    .catch(err => res.status(404).json({
+      profile: "There are no profiles"
+    }));
 });
 
 // @route GET api/profile/handle/:handle
@@ -60,7 +67,9 @@ router.get("/all", (req, res) => {
 
 router.get("/handle/:handle", (req, res) => {
   const errors = {};
-  Profile.findOne({ handle: req.params.handle })
+  Profile.findOne({
+      handle: req.params.handle
+    })
     .populate("user", ["name", "avatar"])
     .then(profile => {
       if (!profile) {
@@ -79,7 +88,9 @@ router.get("/handle/:handle", (req, res) => {
 
 router.get("/user/:user_id", (req, res) => {
   const errors = {};
-  Profile.findOne({ user: req.params.user_id })
+  Profile.findOne({
+      user: req.params.user_id
+    })
     .populate("user", ["name", "avatar"])
     .then(profile => {
       if (!profile) {
@@ -90,7 +101,9 @@ router.get("/user/:user_id", (req, res) => {
       res.json(profile);
     })
     .catch(err =>
-      res.status(400).json({ profile: "There is non profile for this user" })
+      res.status(400).json({
+        profile: "There is non profile for this user"
+      })
     );
 });
 
@@ -99,9 +112,14 @@ router.get("/user/:user_id", (req, res) => {
 // @access PRIVATE
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }),
+  passport.authenticate("jwt", {
+    session: false
+  }),
   (req, res) => {
-    const { errors, isValid } = validateProfileInput(req.body);
+    const {
+      errors,
+      isValid
+    } = validateProfileInput(req.body);
 
     // Check Validation
     if (!isValid) {
@@ -133,7 +151,9 @@ router.post(
     if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
     if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
 
-    Profile.findOne({ user: req.user.id }).then(profile => {
+    Profile.findOne({
+      user: req.user.id
+    }).then(profile => {
       if (profile) {
         // Update the profile
         Profile.findOneAndUpdate({
@@ -147,7 +167,9 @@ router.post(
         // Create the profile
 
         // Check if handle exists
-        Profile.findOne({ handle: profileFields.handle }).then(profile => {
+        Profile.findOne({
+          handle: profileFields.handle
+        }).then(profile => {
           if (profile) {
             errors.handle = "That handle already exsits";
             res.status(400).json(errors);
@@ -160,5 +182,36 @@ router.post(
     });
   }
 );
+
+// @route POST api/profile/experience
+// @desc Add experience to profile
+// @access PRIVATE
+
+router.post('/experience', passport.authenticate('jwt', {
+  session: false
+}), (req, res) => {
+  onst {
+    errors,
+    isValid
+  } = validateExperienceInput(req.body);
+  Profile.findOne({
+    user: req.user.id
+  }).then(profile => {
+    const newExp = {
+      title: req.body.title,
+      company: req.body.company,
+      location: req.body.location,
+      from: req.body.from,
+      to: req.body.to,
+      current: req.body.current,
+      description: req.body.description
+    };
+
+    // Add to exp array
+    profile.experience.unshift(newExp);
+
+    profile.save().then(profile => res.json(profile))
+  });
+})
 
 module.exports = router;

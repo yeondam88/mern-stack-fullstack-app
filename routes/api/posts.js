@@ -13,6 +13,19 @@ router.get("/test", (req, res) => res.json({
   msg: "Posts work!"
 }));
 
+// @route GET api/posts
+// @desc Get Posts
+// @access Public
+
+router.get('/', (req, res) => {
+  Post.find()
+    .sort({
+      date: -1
+    })
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404));
+})
+
 // @route POST api/posts
 // @desc Create post
 // @access Private

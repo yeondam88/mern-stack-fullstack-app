@@ -105,7 +105,7 @@ router.delete('/:id', passport.authenticate('jwt', {
 // @desc Like the post
 // @access Private
 
-router.post('like/:id', passport.authenticate('jwt', {
+router.post('/like/:id', passport.authenticate('jwt', {
   session: false
 }), (req, res) => {
   Profile.findOne({

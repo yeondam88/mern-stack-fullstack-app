@@ -3,3 +3,58 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.main-bg {
+  background-color: rgb(15, 1, 94);
+  background-image: radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94));
+  color: rgb(255, 255, 255);
+  height: 50vh;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.navbar-section a {
+  color: white !important;
+}
+
+.footer {
+  align-items: stretch;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: stretch;
+  -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer .footer-section {
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex: 1 0 0;
+  flex: 1 0 0; 
+  -ms-flex-align: center;
+}
+
+.footer .footer-section:not(:first-child):last-child {
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.footer .footer-center {
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto; 
+  -ms-flex-align: center;
+}
+
+.footer .footer-brand {
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+}

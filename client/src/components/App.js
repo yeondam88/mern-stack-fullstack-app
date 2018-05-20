@@ -6,15 +6,20 @@ import Footer from '../components/Layout/Footer';
 class App extends Component {
     render() {
       return (
-        <div className="container main-bg">
-          <Navbar />
-          <div>
-            <Landing />
-          </div>
-          <Footer />
-        </div>
+        <section className="hero is-success is-fullheight">
+  <div className="hero-head">
+    <Navbar />
+  </div>
+
+  <Landing />
+
+  <Footer />
+  
+  
+</section>
       );
     }
 }
 
 export default App;
+

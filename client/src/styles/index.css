@@ -19,6 +19,13 @@ body {
   color: white !important;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
 .footer {
   align-items: stretch;
   display: flex;

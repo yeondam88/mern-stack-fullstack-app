@@ -11,7 +11,7 @@ class Landing extends Component {
       <h2 class="subtitle">
       Please join us today.
       </h2>
-      <button className="btn btn-primary">Sign up now</button>
+      <button className="button is-rounded is-inverted">Sign up now</button>
     </div>
   </div>
     );

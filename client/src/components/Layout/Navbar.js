@@ -7,7 +7,7 @@ class Navbar extends Component {
       <div className="container">
         <div className="navbar-brand">
           <a className="navbar-item">
-            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo" />
+            Devconnector
           </a>
           <span className="navbar-burger burger" data-target="navbarMenuHeroC">
             <span></span>
@@ -23,15 +23,12 @@ class Navbar extends Component {
             <a className="navbar-item">
               Examples
             </a>
-            <a className="navbar-item">
-              Documentation
-            </a>
             <span className="navbar-item">
-              <a className="button is-success is-inverted">
+              <a className="button is-inverted">
                 <span className="icon">
                   <i className="fab fa-github"></i>
                 </span>
-                <span>Download</span>
+                <span>Github</span>
               </a>
             </span>
           </div>

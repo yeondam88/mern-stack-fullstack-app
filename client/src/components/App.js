@@ -6,7 +6,7 @@ import Footer from '../components/Layout/Footer';
 class App extends Component {
     render() {
       return (
-        <section className="hero is-success is-fullheight">
+        <section className="hero is-danger is-fullheight is-bold">
   <div className="hero-head">
     <Navbar />
   </div>

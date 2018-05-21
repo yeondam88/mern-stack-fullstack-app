@@ -26,42 +26,26 @@ body {
   flex-direction: column;
 }
 
+.hero-footer p {
+  color: black;
+}
+
 .footer {
-  align-items: stretch;
-  display: flex;
-  display: -ms-flexbox;
-  -ms-flex-align: stretch;
-  -ms-flex-pack: justify;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 1rem;
 }
 
-.footer .footer-section {
-  align-items: center;
-  display: flex;
-  display: -ms-flexbox;
-  -ms-flex: 1 0 0;
-  flex: 1 0 0; 
-  -ms-flex-align: center;
+.footer>* {
+  color: black;
 }
 
-.footer .footer-section:not(:first-child):last-child {
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+.box-content {
+  box-shadow: 0 3rem 3rem -1rem rgba(10, 10, 10, .2);
+  max-width: 520px;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 6px;
 }
 
-.footer .footer-center {
-  align-items: center;
-  display: flex;
-  display: -ms-flexbox;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto; 
-  -ms-flex-align: center;
-}
-
-.footer .footer-brand {
-  font-size: .9rem;
-  font-weight: 500;
-  text-decoration: none;
+.box-content>* {
+  color: black !important;
 }

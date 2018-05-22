@@ -49,3 +49,18 @@ body {
 .box-content>* {
   color: black !important;
 }
+
+.has-background {
+  background: #FBFBFD;
+}
+
+.card {
+  background-color: transparent;
+  box-shadow: none;
+  color: #998DA0;
+}
+
+.card.is-usp {
+  max-width: 320px;
+  margin: 0 auto;
+}

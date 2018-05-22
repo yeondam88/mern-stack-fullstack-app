@@ -19,15 +19,15 @@ class Navbar extends Component {
             </div>
             <div className="navbar-menu">
               <div className="navbar-end">
-                <a href="/" className="navbar-item is-active">
+                <Link to="/" className="navbar-item is-active">
                   Home
-                </a>
-                <a href="/" className="navbar-item">
+                </Link>
+                <Link to="/register" className="navbar-item">
                   Register
-                </a>
-                <a href="/" className="navbar-item">
+                </Link>
+                <Link to="/signin" className="navbar-item">
                   Sign in
-                </a>
+                </Link>
               </div>
             </div>
           </div>

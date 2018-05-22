@@ -28,7 +28,8 @@ class Register extends Component {
         <section className="section has-background is-medium">
           <div className="container">
             <div className="columns">
-              <div className="column is-6">
+              <div className="column is-6 is-offset-3">
+                <h2 className="title">Register</h2>
                 <div className="field">
                   <label className="label">Name</label>
                   <div className="control">
@@ -89,9 +90,7 @@ class Register extends Component {
                     />
                   </div>
                 </div>
-              </div>
-              <div className="column is-6">
-                <img src={CodeIcon} alt="code" />
+                <button className="button button-success">Register</button>
               </div>
             </div>
           </div>

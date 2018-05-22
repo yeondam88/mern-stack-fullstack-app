@@ -1,37 +1,37 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Logo from "../../images/dev.svg";
 
 class Navbar extends Component {
   render() {
     return (
-      <header className="navbar">
-        <div className="container">
-          <div className="navbar-brand">
-            <a className="navbar-item">Devconnector</a>
-            <a className="navbar-item">Developers</a>
-            <span
-              className="navbar-burger burger"
-              data-target="navbarMenuHeroC"
-            >
-              <span />
-              <span />
-              <span />
-            </span>
-          </div>
-          <div id="navbarMenuHeroC" className="navbar-menu">
-            <div className="navbar-end">
-              <a className="navbar-item is-active">Sign up</a>
-              <a className="navbar-item">Log in</a>
-              <span className="navbar-item">
-                <a className="button is-inverted">
-                  <span className="icon">
-                    <i className="fab fa-github" />
-                  </span>
-                  <span>Github</span>
+      <header className="app-header">
+        <nav className="navbar is-fixed-top">
+          <div className="container">
+            <div className="navbar-brand">
+              <a className="navbar-item">
+                <img
+                  src={Logo}
+                  alt="logo"
+                  style={{ "max-height": "4.75rem", width: "100%" }}
+                />
+              </a>
+            </div>
+            <div className="navbar-menu">
+              <div className="navbar-end">
+                <a href="/" className="navbar-item is-active">
+                  Home
                 </a>
-              </span>
+                <a href="/" className="navbar-item">
+                  Register
+                </a>
+                <a href="/" className="navbar-item">
+                  Sign in
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </nav>
       </header>
     );
   }

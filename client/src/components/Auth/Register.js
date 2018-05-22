@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CodeIcon from "../../images/code-icon.png";
 
 class Register extends Component {
   state = {
@@ -11,33 +12,90 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="section">
-        <div className="box">
-          <div className="field">
-            <p className="control has-icons-left has-icons-right">
-              <input className="input" type="email" placeholder="Email" />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope" />
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-check" />
-              </span>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control has-icons-left">
-              <input className="input" type="password" placeholder="Password" />
-              <span className="icon is-small is-left">
-                <i className="fas fa-lock" />
-              </span>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control">
-              <button className="button is-success">Login</button>
-            </p>
+      <div className="app-content">
+        <div className="hero is-primary is-bold">
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-vcentered">
+                <div className="column is-two-thirds">
+                  <h1 className="title">Devconnector</h1>
+                  <h2 className="subtitle">Register today.</h2>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <section className="section has-background is-medium">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-6">
+                <div className="field">
+                  <label className="label">Name</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="password"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Password Confirm</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="password"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label">Avatar</label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Text input"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="column is-6">
+                <img src={CodeIcon} alt="code" />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }

@@ -45,7 +45,10 @@ class Landing extends Component {
             <div className="columns">
               <div className="column is-4">
                 <div className="card is-usp">
-                  <img src={icon1} alt="logo" width="50px" />
+                  <div style={{ textAlign: "center" }}>
+                    <img src={icon1} alt="logo" width="50px" />
+                  </div>
+
                   <hr className="spacer is-1" />
                   <h3 className="title is-4 is-spaced">Connection</h3>
                   <p className="subtitle is-5">
@@ -58,7 +61,9 @@ class Landing extends Component {
               </div>
               <div className="column is-4">
                 <div className="card is-usp">
-                  <img src={icon2} alt="logo" width="50px" />
+                  <div style={{ textAlign: "center" }}>
+                    <img src={icon2} alt="logo" width="50px" />
+                  </div>
                   <hr className="spacer is-1" />
                   <h3 className="title is-4 is-spaced">Connection</h3>
                   <p className="subtitle is-5">
@@ -71,7 +76,9 @@ class Landing extends Component {
               </div>
               <div className="column is-4">
                 <div className="card is-usp">
-                  <img src={icon3} alt="logo" width="50px" />
+                  <div style={{ textAlign: "center" }}>
+                    <img src={icon3} alt="logo" width="50px" />
+                  </div>
                   <hr className="spacer is-1" />
                   <h3 className="title is-4 is-spaced">Connection</h3>
                   <p className="subtitle is-5">

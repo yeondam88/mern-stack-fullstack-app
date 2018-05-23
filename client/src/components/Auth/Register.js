@@ -6,8 +6,7 @@ class Register extends Component {
     name: "",
     email: "",
     password: "",
-    password2: "",
-    avatar: "",
+    password2: ""
     errros: {}
   };
 
@@ -52,7 +51,7 @@ class Register extends Component {
                     <input
                       className="input"
                       type="text"
-                      placeholder="Text input"
+                      placeholder="Name"
                       name="name"
                       value={name}
                       onChange={this.handleInput}
@@ -66,7 +65,7 @@ class Register extends Component {
                       className="input"
                       type="email"
                       name="email"
-                      placeholder="Text input"
+                      placeholder="Email"
                       value={email}
                       onChange={this.handleInput}
                     />
@@ -78,7 +77,7 @@ class Register extends Component {
                     <input
                       className="input"
                       type="password"
-                      placeholder="Text input"
+                      placeholder="Password"
                       name="password"
                       value={password}
                       onChange={this.handleInput}
@@ -91,22 +90,9 @@ class Register extends Component {
                     <input
                       className="input"
                       type="password"
-                      placeholder="Text input"
+                      placeholder="Confirm Password"
                       name="password2"
                       value={password2}
-                      onChange={this.handleInput}
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label">Avatar</label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type="text"
-                      placeholder="Text input"
-                      name="avatar"
-                      value={avatar}
                       onChange={this.handleInput}
                     />
                   </div>

@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
 class Login extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
     return (
       <div className="app-content">
@@ -19,15 +35,20 @@ class Login extends Component {
         <section className="section has-background is-medium">
           <div className="container">
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <form
+                onSumbit={this.handleSubmit}
+                className="column is-6 is-offset-3"
+              >
                 <h2 className="title">Sign in</h2>
                 <div className="field">
                   <label className="label">Email</label>
                   <div className="control">
                     <input
                       className="input"
-                      type="text"
-                      placeholder="Text input"
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
@@ -37,12 +58,16 @@ class Login extends Component {
                     <input
                       className="input"
                       type="password"
-                      placeholder="Text input"
+                      placeholder="Password"
+                      name="password"
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
-                <button className="button button-success">Sign in</button>
-              </div>
+                <button type="submit" className="button button-success">
+                  Sign in
+                </button>
+              </form>
             </div>
           </div>
         </section>

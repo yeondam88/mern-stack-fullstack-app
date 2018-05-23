@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CodeIcon from "../../images/code-icon.png";
 import axios from "axios";
+import classnames from "classnames";
 
 class Register extends Component {
   state = {
@@ -64,7 +65,9 @@ class Register extends Component {
                   <label className="label">Name</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.name
+                      })}
                       type="text"
                       placeholder="Name"
                       name="name"
@@ -72,7 +75,9 @@ class Register extends Component {
                       onChange={this.handleInput}
                     />
                     {errors.name && (
-                      <p className="has-text-danger">{errors.name}</p>
+                      <p className="animated shake help has-text-danger">
+                        {errors.name}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -80,7 +85,9 @@ class Register extends Component {
                   <label className="label">Email</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.email
+                      })}
                       type="email"
                       name="email"
                       placeholder="Email"
@@ -88,7 +95,9 @@ class Register extends Component {
                       onChange={this.handleInput}
                     />
                     {errors.email && (
-                      <p className="has-text-danger">{errors.email}</p>
+                      <p className="animated shake help has-text-danger">
+                        {errors.email}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -96,7 +105,9 @@ class Register extends Component {
                   <label className="label">Password</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.password
+                      })}
                       type="password"
                       placeholder="Password"
                       name="password"
@@ -104,7 +115,9 @@ class Register extends Component {
                       onChange={this.handleInput}
                     />
                     {errors.password && (
-                      <p className="has-text-danger">{errors.password}</p>
+                      <p className="animated shake help has-text-danger">
+                        {errors.password}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -112,7 +125,9 @@ class Register extends Component {
                   <label className="label">Password Confirm</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.password2
+                      })}
                       type="password"
                       placeholder="Confirm Password"
                       name="password2"
@@ -120,7 +135,9 @@ class Register extends Component {
                       onChange={this.handleInput}
                     />
                     {errors.password2 && (
-                      <p className="has-text-danger">{errors.password2}</p>
+                      <p className="animated shake help has-text-danger">
+                        {errors.password2}
+                      </p>
                     )}
                   </div>
                 </div>

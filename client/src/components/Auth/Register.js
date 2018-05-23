@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CodeIcon from "../../images/code-icon.png";
+import axios from "axios";
 
 class Register extends Component {
   state = {
@@ -10,6 +11,13 @@ class Register extends Component {
     errros: {}
   };
 
+  register = user => {
+    axios
+      .post("/api/users/register", user)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
+  };
+
   handleInput = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -18,7 +26,14 @@ class Register extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+
+    this.register(newUser);
   };
 
   render() {

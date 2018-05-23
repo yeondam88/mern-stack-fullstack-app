@@ -3,7 +3,8 @@ import React, { Component } from "react";
 class Login extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
   handleSubmit = e => {
@@ -18,6 +19,7 @@ class Login extends Component {
   };
 
   render() {
+    const { email, password } = this.state;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">
@@ -36,7 +38,7 @@ class Login extends Component {
           <div className="container">
             <div className="columns">
               <form
-                onSumbit={this.handleSubmit}
+                onSubmit={this.handleSubmit}
                 className="column is-6 is-offset-3"
               >
                 <h2 className="title">Sign in</h2>
@@ -48,6 +50,7 @@ class Login extends Component {
                       type="email"
                       placeholder="Email"
                       name="email"
+                      value={email}
                       onChange={this.handleInput}
                     />
                   </div>
@@ -60,6 +63,7 @@ class Login extends Component {
                       type="password"
                       placeholder="Password"
                       name="password"
+                      value={password}
                       onChange={this.handleInput}
                     />
                   </div>

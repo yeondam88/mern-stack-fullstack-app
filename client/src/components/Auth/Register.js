@@ -8,14 +8,14 @@ class Register extends Component {
     email: "",
     password: "",
     password2: "",
-    errros: {}
+    errors: {}
   };
 
   register = user => {
     axios
       .post("/api/users/register", user)
       .then(res => console.log(res.data))
-      .catch(err => console.log(err.response.data));
+      .catch(err => this.setState({ errors: err.response.data }));
   };
 
   handleInput = e => {
@@ -37,7 +37,7 @@ class Register extends Component {
   };
 
   render() {
-    const { name, email, password, password2, avatar } = this.state;
+    const { name, email, password, password2, avatar, errors } = this.state;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">
@@ -71,6 +71,9 @@ class Register extends Component {
                       value={name}
                       onChange={this.handleInput}
                     />
+                    {errors.name && (
+                      <p className="has-text-danger">{errors.name}</p>
+                    )}
                   </div>
                 </div>
                 <div className="field">
@@ -84,6 +87,9 @@ class Register extends Component {
                       value={email}
                       onChange={this.handleInput}
                     />
+                    {errors.email && (
+                      <p className="has-text-danger">{errors.email}</p>
+                    )}
                   </div>
                 </div>
                 <div className="field">
@@ -97,6 +103,9 @@ class Register extends Component {
                       value={password}
                       onChange={this.handleInput}
                     />
+                    {errors.password && (
+                      <p className="has-text-danger">{errors.password}</p>
+                    )}
                   </div>
                 </div>
                 <div className="field">
@@ -110,6 +119,9 @@ class Register extends Component {
                       value={password2}
                       onChange={this.handleInput}
                     />
+                    {errors.password2 && (
+                      <p className="has-text-danger">{errors.password2}</p>
+                    )}
                   </div>
                 </div>
                 <button type="submit" className="button button-success">

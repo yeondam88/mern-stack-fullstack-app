@@ -13,7 +13,7 @@ class Navbar extends Component {
                 <img
                   src={Logo}
                   alt="logo"
-                  style={{ "max-height": "4.75rem", width: "100%" }}
+                  style={{ maxHeight: "4.75rem", width: "100%" }}
                 />
               </a>
             </div>

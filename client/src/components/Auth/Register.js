@@ -7,10 +7,23 @@ class Register extends Component {
     email: "",
     password: "",
     password2: "",
+    avatar: "",
     errros: {}
   };
 
+  handleInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
+    const { name, email, password, password2, avatar } = this.state;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">
@@ -28,7 +41,10 @@ class Register extends Component {
         <section className="section has-background is-medium">
           <div className="container">
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <form
+                onSubmit={this.handleSubmit}
+                className="column is-6 is-offset-3"
+              >
                 <h2 className="title">Register</h2>
                 <div className="field">
                   <label className="label">Name</label>
@@ -37,6 +53,9 @@ class Register extends Component {
                       className="input"
                       type="text"
                       placeholder="Text input"
+                      name="name"
+                      value={name}
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
@@ -45,8 +64,11 @@ class Register extends Component {
                   <div className="control">
                     <input
                       className="input"
-                      type="text"
+                      type="email"
+                      name="email"
                       placeholder="Text input"
+                      value={email}
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
@@ -57,6 +79,9 @@ class Register extends Component {
                       className="input"
                       type="password"
                       placeholder="Text input"
+                      name="password"
+                      value={password}
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
@@ -67,16 +92,9 @@ class Register extends Component {
                       className="input"
                       type="password"
                       placeholder="Text input"
-                    />
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label">Email</label>
-                  <div className="control">
-                    <input
-                      className="input"
-                      type="text"
-                      placeholder="Text input"
+                      name="password2"
+                      value={password2}
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
@@ -87,11 +105,16 @@ class Register extends Component {
                       className="input"
                       type="text"
                       placeholder="Text input"
+                      name="avatar"
+                      value={avatar}
+                      onChange={this.handleInput}
                     />
                   </div>
                 </div>
-                <button className="button button-success">Register</button>
-              </div>
+                <button type="submit" className="button button-success">
+                  Register
+                </button>
+              </form>
             </div>
           </div>
         </section>

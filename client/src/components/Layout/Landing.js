@@ -1,10 +1,19 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
 import CodeImg from "../../images/lighthouse.jpg";
 import icon1 from "../../images/offices.svg";
 import icon2 from "../../images/process.svg";
 import icon3 from "../../images/coding.svg";
 
 class Landing extends Component {
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
   render() {
     return (
       <Fragment>
@@ -19,14 +28,10 @@ class Landing extends Component {
                   </h2>
                   <div className="field is-grouped">
                     <div className="control">
-                      <a className="button is-primary is-medium">
-                        Register
-                      </a>
+                      <a className="button is-primary is-medium">Register</a>
                     </div>
                     <div className="control">
-                      <a className="button is-primary is-medium">
-                        Sign in
-                      </a>
+                      <a className="button is-primary is-medium">Sign in</a>
                     </div>
                   </div>
                 </div>
@@ -96,4 +101,12 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, null)(Landing);

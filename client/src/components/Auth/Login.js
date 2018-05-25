@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { loginUser, setCurrentUser } from "../../actions/authActions";
+import { connect } from "react-redux";
 
 class Login extends Component {
   state = {
@@ -7,9 +10,22 @@ class Login extends Component {
     errors: {}
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    this.props.loginUser(user, this.props.history);
   };
 
   handleInput = e => {
@@ -19,7 +35,8 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, errors } = this.state;
+    const { loginUser } = this.props;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">
@@ -53,6 +70,12 @@ class Login extends Component {
                       value={email}
                       onChange={this.handleInput}
                     />
+                    {errors.email && (
+                      <p className="animated shake help has-text-danger">
+                        {" "}
+                        {errors.email}{" "}
+                      </p>
+                    )}{" "}
                   </div>
                 </div>
                 <div className="field">
@@ -66,6 +89,12 @@ class Login extends Component {
                       value={password}
                       onChange={this.handleInput}
                     />
+                    {errors.password && (
+                      <p className="animated shake help has-text-danger">
+                        {" "}
+                        {errors.password}{" "}
+                      </p>
+                    )}{" "}
                   </div>
                 </div>
                 <button type="submit" className="button button-success">
@@ -80,4 +109,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  user: state.user,
+  errors: state.errors
+});
+
+export default connect(mapStateToProps, { loginUser })(withRouter(Login));

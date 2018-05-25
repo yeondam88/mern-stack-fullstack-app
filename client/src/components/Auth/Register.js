@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CodeIcon from "../../images/code-icon.png";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions";
 import axios from "axios";
 import classnames from "classnames";
 
@@ -16,7 +17,11 @@ class Register extends Component {
     axios
       .post("/api/users/register", user)
       .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data }));
+      .catch(err =>
+        this.setState({
+          errors: err.response.data
+        })
+      );
   };
 
   handleInput = e => {
@@ -46,13 +51,13 @@ class Register extends Component {
             <div className="container">
               <div className="columns is-vcentered">
                 <div className="column is-two-thirds">
-                  <h1 className="title">Devconnector</h1>
-                  <h2 className="subtitle">Register today.</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <h1 className="title"> Devconnector </h1>{" "}
+                  <h2 className="subtitle"> Register today. </h2>{" "}
+                </div>{" "}
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
         <section className="section has-background is-medium">
           <div className="container">
             <div className="columns">
@@ -60,9 +65,9 @@ class Register extends Component {
                 onSubmit={this.handleSubmit}
                 className="column is-6 is-offset-3"
               >
-                <h2 className="title">Register</h2>
+                <h2 className="title"> Register </h2>{" "}
                 <div className="field">
-                  <label className="label">Name</label>
+                  <label className="label"> Name </label>{" "}
                   <div className="control">
                     <input
                       className={classnames("input", {
@@ -73,16 +78,17 @@ class Register extends Component {
                       name="name"
                       value={name}
                       onChange={this.handleInput}
-                    />
+                    />{" "}
                     {errors.name && (
                       <p className="animated shake help has-text-danger">
-                        {errors.name}
+                        {" "}
+                        {errors.name}{" "}
                       </p>
-                    )}
-                  </div>
-                </div>
+                    )}{" "}
+                  </div>{" "}
+                </div>{" "}
                 <div className="field">
-                  <label className="label">Email</label>
+                  <label className="label"> Email </label>{" "}
                   <div className="control">
                     <input
                       className={classnames("input", {
@@ -93,16 +99,17 @@ class Register extends Component {
                       placeholder="Email"
                       value={email}
                       onChange={this.handleInput}
-                    />
+                    />{" "}
                     {errors.email && (
                       <p className="animated shake help has-text-danger">
-                        {errors.email}
+                        {" "}
+                        {errors.email}{" "}
                       </p>
-                    )}
-                  </div>
-                </div>
+                    )}{" "}
+                  </div>{" "}
+                </div>{" "}
                 <div className="field">
-                  <label className="label">Password</label>
+                  <label className="label"> Password </label>{" "}
                   <div className="control">
                     <input
                       className={classnames("input", {
@@ -113,16 +120,17 @@ class Register extends Component {
                       name="password"
                       value={password}
                       onChange={this.handleInput}
-                    />
+                    />{" "}
                     {errors.password && (
                       <p className="animated shake help has-text-danger">
-                        {errors.password}
+                        {" "}
+                        {errors.password}{" "}
                       </p>
-                    )}
-                  </div>
-                </div>
+                    )}{" "}
+                  </div>{" "}
+                </div>{" "}
                 <div className="field">
-                  <label className="label">Password Confirm</label>
+                  <label className="label"> Password Confirm </label>{" "}
                   <div className="control">
                     <input
                       className={classnames("input", {
@@ -133,24 +141,25 @@ class Register extends Component {
                       name="password2"
                       value={password2}
                       onChange={this.handleInput}
-                    />
+                    />{" "}
                     {errors.password2 && (
                       <p className="animated shake help has-text-danger">
-                        {errors.password2}
+                        {" "}
+                        {errors.password2}{" "}
                       </p>
-                    )}
-                  </div>
-                </div>
+                    )}{" "}
+                  </div>{" "}
+                </div>{" "}
                 <button type="submit" className="button button-success">
-                  Register
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+                  Register{" "}
+                </button>{" "}
+              </form>{" "}
+            </div>{" "}
+          </div>{" "}
+        </section>{" "}
       </div>
     );
   }
 }
 
-export default Register;
+export default connect(null, { registerUser })(Register);

@@ -1,3 +1,5 @@
+import {} from '../actions/actionTypes';
+
 const initialState = {
   isAuthenticated: false,
   user: {}
@@ -9,7 +11,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        user: action.user
+        user: action.payload
       }
     default:
       return state;

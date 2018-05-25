@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { loginUser, setCurrentUser } from "../../actions/authActions";
 import { connect } from "react-redux";
+import classnames from "classnames";
+import { REGISTER_USER } from "../../actions/actionTypes";
 
 class Login extends Component {
   state = {
@@ -11,6 +14,10 @@ class Login extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+
     if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
@@ -25,7 +32,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    this.props.loginUser(user, this.props.history);
+    this.props.loginUser(user);
   };
 
   handleInput = e => {
@@ -63,7 +70,9 @@ class Login extends Component {
                   <label className="label">Email</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.email
+                      })}
                       type="email"
                       placeholder="Email"
                       name="email"
@@ -82,7 +91,9 @@ class Login extends Component {
                   <label className="label">Password</label>
                   <div className="control">
                     <input
-                      className="input"
+                      className={classnames("input", {
+                        "is-danger": errors.password
+                      })}
                       type="password"
                       placeholder="Password"
                       name="password"
@@ -109,9 +120,14 @@ class Login extends Component {
   }
 }
 
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object
+};
+
 const mapStateToProps = state => ({
   auth: state.auth,
-  user: state.user,
   errors: state.errors
 });
 

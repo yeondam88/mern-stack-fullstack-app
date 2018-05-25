@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import CodeImg from "../../images/lighthouse.jpg";
-import Logo from "../../images/code-icon.png";
 import icon1 from "../../images/offices.svg";
 import icon2 from "../../images/process.svg";
 import icon3 from "../../images/coding.svg";
@@ -20,12 +19,12 @@ class Landing extends Component {
                   </h2>
                   <div className="field is-grouped">
                     <div className="control">
-                      <a href="#" className="button is-primary is-medium">
+                      <a className="button is-primary is-medium">
                         Register
                       </a>
                     </div>
                     <div className="control">
-                      <a href="#" className="button is-primary is-medium">
+                      <a className="button is-primary is-medium">
                         Sign in
                       </a>
                     </div>

@@ -14,6 +14,12 @@ class Register extends Component {
     errors: {}
   };
 
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -41,7 +47,7 @@ class Register extends Component {
   };
 
   render() {
-    const { name, email, password, password2, avatar, errors } = this.state;
+    const { name, email, password, password2, errors } = this.state;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">

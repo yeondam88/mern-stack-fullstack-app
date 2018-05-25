@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { loginUser, setCurrentUser } from "../../actions/authActions";
+import { loginUser } from "../../actions/authActions";
 import { connect } from "react-redux";
 import classnames from "classnames";
-import { REGISTER_USER } from "../../actions/actionTypes";
 
 class Login extends Component {
   state = {
@@ -12,6 +11,12 @@ class Login extends Component {
     password: "",
     errors: {}
   };
+
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
@@ -43,7 +48,6 @@ class Login extends Component {
 
   render() {
     const { email, password, errors } = this.state;
-    const { loginUser } = this.props;
     return (
       <div className="app-content">
         <div className="hero is-primary is-bold">

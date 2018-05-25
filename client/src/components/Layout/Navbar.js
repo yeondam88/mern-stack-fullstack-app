@@ -1,13 +1,42 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { logout } from "../../actions/authActions";
+import { logoutUser } from "../../actions/authActions";
 import Logo from "../../images/dev.svg";
 
 class Navbar extends Component {
+  logout = () => {
+    this.props.logoutUser();
+  };
+
   render() {
-    const { logout } = this.props;
     const { isAuthenticated, user } = this.props.auth;
+    const authLinks = (
+      <div className="navbar-end">
+        <Link to="/dashboard" className="navbar-item">
+          Dashboard
+        </Link>
+        <a className="navbar-item" onClick={this.logout}>
+        <img style={{ 'marginRight': '5px', 'width': "25px", borderRadius: '50%'}} src={user.avatar} alt={user.name} title="You must have a gravatar connected to your email to display an image" />Log out
+        </a>
+      </div>
+    );
+
+    const notAuthLinks = (
+      <div className="navbar-end">
+        <Link to="/" className="navbar-item is-active">
+          Home
+        </Link>
+        <Link to="/register" className="navbar-item">
+          Register
+        </Link>
+        <Link to="/login" className="navbar-item">
+          Sign In
+        </Link>
+      </div>
+    );
+
     return (
       <header className="app-header">
         <nav className="navbar is-fixed-top">
@@ -20,31 +49,12 @@ class Navbar extends Component {
                   style={{ maxHeight: "4.75rem", width: "100%" }}
                 />
               </a>
+              <Link to="/developer" className="navbar-item">
+                Developer
+              </Link>
             </div>
             <div className="navbar-menu">
-              <div className="navbar-end">
-                <Link to="/" className="navbar-item is-active">
-                  Home
-                </Link>
-                {isAuthenticated ? (
-                  <Link to="/dashboard" className="navbar-item">
-                    Dashboard
-                  </Link>
-                ) : (
-                  <Link to="/register" className="navbar-item">
-                    Register
-                  </Link>
-                )}
-                {isAuthenticated ? (
-                  <Link to="/" onClick={logout} className="navbar-item">
-                    Log Out
-                  </Link>
-                ) : (
-                  <Link to="/login" className="navbar-item">
-                    Log In
-                  </Link>
-                )}
-              </div>
+              {isAuthenticated ? authLinks : notAuthLinks}
             </div>
           </div>
         </nav>
@@ -53,9 +63,14 @@ class Navbar extends Component {
   }
 }
 
+Navbar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
 const mapStateToProps = state => ({
   auth: state.auth,
   user: state.user
 });
 
-export default connect(mapStateToProps, { logout })(Navbar);
+export default connect(mapStateToProps, { logoutUser })(Navbar);

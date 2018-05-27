@@ -12,6 +12,7 @@ import Footer from "../components/Layout/Footer";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import Dashboard from "./dashboard/Dashboard";
+import PrivateRoute from "../components/common/PrivateRoute";
 import store from "../store";
 
 // Check for token
@@ -45,7 +46,7 @@ class App extends Component {
                 <Route exact path="/" component={Landing} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" component={Login} />
-                <Route path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/dashboard" component={Dashboard} />
               </Switch>
             </main>
             <Footer />

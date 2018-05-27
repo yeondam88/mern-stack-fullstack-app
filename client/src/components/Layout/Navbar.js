@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { clearCurrentProfile } from "../../actions/profileActions";
 import Logo from "../../images/dev.svg";
 
 class Navbar extends Component {
   logout = () => {
+    this.props.clearCurrentProfile();
     this.props.logoutUser();
   };
 
@@ -18,7 +20,12 @@ class Navbar extends Component {
           Dashboard
         </Link>
         <a className="navbar-item" onClick={this.logout}>
-        <img style={{ 'marginRight': '5px', 'width': "25px", borderRadius: '50%'}} src={user.avatar} alt={user.name} title="You must have a gravatar connected to your email to display an image" />Log out
+          <img
+            style={{ marginRight: "5px", width: "25px", borderRadius: "50%" }}
+            src={user.avatar}
+            alt={user.name}
+            title="You must have a gravatar connected to your email to display an image"
+          />Log out
         </a>
       </div>
     );
@@ -73,4 +80,6 @@ const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, { logoutUser })(Navbar);
+export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
+  Navbar
+);

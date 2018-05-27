@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
-import classnames from "classnames";
 import TextFieldGroup from "../common/TextFieldGroup";
 
 class Register extends Component {
@@ -79,7 +78,7 @@ class Register extends Component {
                   value={name}
                   onChange={this.handleInput}
                   error={errors.name}
-                />
+                />{" "}
                 <TextFieldGroup
                   label="Email"
                   type="email"
@@ -88,7 +87,7 @@ class Register extends Component {
                   value={email}
                   onChange={this.handleInput}
                   error={errors.email}
-                />
+                />{" "}
                 <TextFieldGroup
                   label="Password"
                   type="password"
@@ -97,7 +96,7 @@ class Register extends Component {
                   value={password}
                   onChange={this.handleInput}
                   error={errors.password}
-                />
+                />{" "}
                 <TextFieldGroup
                   label="Password Confirm"
                   type="password"
@@ -106,7 +105,7 @@ class Register extends Component {
                   value={password2}
                   onChange={this.handleInput}
                   error={errors.password2}
-                />
+                />{" "}
                 <button type="submit" className="button button-success">
                   Register{" "}
                 </button>{" "}
@@ -130,4 +129,6 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { registerUser })(withRouter(Register));
+export default connect(mapStateToProps, {
+  registerUser
+})(withRouter(Register));

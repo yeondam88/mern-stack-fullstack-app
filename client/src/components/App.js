@@ -4,12 +4,14 @@ import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "../utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "../actions/authActions";
+import { clearCurrentProfile } from "../actions/profileActions";
 
 import Navbar from "../components/Layout/Navbar";
 import Landing from "../components/Layout/Landing";
 import Footer from "../components/Layout/Footer";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
+import Dashboard from "./dashboard/Dashboard";
 import store from "../store";
 
 // Check for token
@@ -22,12 +24,12 @@ if (localStorage.jwtToken) {
 
   // check for expired token
   const currentTime = Date.now() / 1000;
-  if(decoded.exp < currentTime) {
+  if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-    // TODO: Clear current profile
+    store.dispatch(clearCurrentProfile());
     // Redirect to login
-    window.location.href = '/login';
+    window.location.href = "/login";
   }
 }
 
@@ -40,8 +42,9 @@ class App extends Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/dashboard" component={Dashboard} />
             </Switch>
             <Footer />
           </div>

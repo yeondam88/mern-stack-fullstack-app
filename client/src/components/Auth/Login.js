@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { loginUser } from "../../actions/authActions";
 import { connect } from "react-redux";
-import classnames from "classnames";
 import TextFieldGroup from "../common/TextFieldGroup";
 
 class Login extends Component {
@@ -56,13 +55,13 @@ class Login extends Component {
             <div className="container">
               <div className="columns is-vcentered">
                 <div className="column is-two-thirds">
-                  <h1 className="title">Devconnector</h1>
-                  <h2 className="subtitle">Welcome Back.</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                  <h1 className="title"> Devconnector </h1>{" "}
+                  <h2 className="subtitle"> Welcome Back. </h2>{" "}
+                </div>{" "}
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
         <section className="section has-background is-medium">
           <div className="container">
             <div className="columns">
@@ -70,7 +69,7 @@ class Login extends Component {
                 onSubmit={this.handleSubmit}
                 className="column is-6 is-offset-3"
               >
-                <h2 className="title">Sign in</h2>
+                <h2 className="title"> Sign in </h2>{" "}
                 <TextFieldGroup
                   label="Email"
                   name="email"
@@ -80,7 +79,6 @@ class Login extends Component {
                   placeholder="Email"
                   error={errors.email}
                 />
-
                 <TextFieldGroup
                   label="Password"
                   name="password"
@@ -89,14 +87,14 @@ class Login extends Component {
                   onChange={this.handleInput}
                   placeholder="Password"
                   error={errors.password}
-                />
+                />{" "}
                 <button type="submit" className="button button-success">
                   Sign in
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+                </button>{" "}
+              </form>{" "}
+            </div>{" "}
+          </div>{" "}
+        </section>{" "}
       </div>
     );
   }
@@ -113,4 +111,6 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { loginUser })(withRouter(Login));
+export default connect(mapStateToProps, {
+  loginUser
+})(withRouter(Login));

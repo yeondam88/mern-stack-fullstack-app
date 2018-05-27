@@ -4,6 +4,16 @@ body {
   font-family: 'Sunflower', sans-serif;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1
+}
+
 .main-bg {
   background-color: rgb(15, 1, 94);
   background-image: radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94));
@@ -64,4 +74,60 @@ body {
 .card.is-usp {
   max-width: 320px;
   margin: 0 auto;
+}
+
+/*
+*  Spinner
+*/
+
+.spin-me-round-bb-bb-right-round {
+  width: 0.1px;
+  height: 0.1px;
+  border: 25px solid transparent;
+  border-radius: 40px;
+  animation: loader 2s linear infinite, spin 0.5s linear infinite;
+}
+
+.spin-me-round-bb-bb-right-round::after {
+  display: block;
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -20px;
+  content: '';
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  background-color: white;
+}
+
+@keyframes loader {
+  0% {
+    border-left-color: transparent;
+    border-right-color: #013C80
+  }
+  25% {
+    border-top-color: transparent;
+    border-bottom-color: #016dae
+  }
+  50% {
+    border-right-color: transparent;
+    border-left-color: #009edb
+  }
+  75% {
+    border-bottom-color: transparent;
+    border-top-color: #016dae
+  }
+  100% {
+    border-left-color: transparent;
+    border-right-color: #013C80
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(-360deg)
+  }
 }

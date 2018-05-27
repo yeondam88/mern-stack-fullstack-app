@@ -46,7 +46,7 @@ class Navbar extends Component {
 
     return (
       <header className="app-header">
-        <nav className="navbar is-fixed-top">
+        <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
               <a className="navbar-item">

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
@@ -38,16 +38,18 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
+          <Fragment>
             <Navbar />
-            <Switch>
-              <Route exact path="/" component={Landing} />
-              <Route path="/register" component={Register} />
-              <Route path="/login" component={Login} />
-              <Route path="/dashboard" component={Dashboard} />
-            </Switch>
+            <main class="app-content">
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
+                <Route path="/dashboard" component={Dashboard} />
+              </Switch>
+            </main>
             <Footer />
-          </div>
+          </Fragment>
         </Router>
       </Provider>
     );

@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Register extends Component {
   state = {
@@ -15,8 +16,8 @@ class Register extends Component {
   };
 
   componentDidMount() {
-    if(this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
     }
   }
 
@@ -70,90 +71,42 @@ class Register extends Component {
                 className="column is-6 is-offset-3"
               >
                 <h2 className="title"> Register </h2>{" "}
-                <div className="field">
-                  <label className="label"> Name </label>{" "}
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.name
-                      })}
-                      type="text"
-                      placeholder="Name"
-                      name="name"
-                      value={name}
-                      onChange={this.handleInput}
-                    />{" "}
-                    {errors.name && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.name}{" "}
-                      </p>
-                    )}{" "}
-                  </div>{" "}
-                </div>{" "}
-                <div className="field">
-                  <label className="label"> Email </label>{" "}
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.email
-                      })}
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={this.handleInput}
-                    />{" "}
-                    {errors.email && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.email}{" "}
-                      </p>
-                    )}{" "}
-                  </div>{" "}
-                </div>{" "}
-                <div className="field">
-                  <label className="label"> Password </label>{" "}
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.password
-                      })}
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleInput}
-                    />{" "}
-                    {errors.password && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.password}{" "}
-                      </p>
-                    )}{" "}
-                  </div>{" "}
-                </div>{" "}
-                <div className="field">
-                  <label className="label"> Password Confirm </label>{" "}
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.password2
-                      })}
-                      type="password"
-                      placeholder="Confirm Password"
-                      name="password2"
-                      value={password2}
-                      onChange={this.handleInput}
-                    />{" "}
-                    {errors.password2 && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.password2}{" "}
-                      </p>
-                    )}{" "}
-                  </div>{" "}
-                </div>{" "}
+                <TextFieldGroup
+                  label="Name"
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  value={name}
+                  onChange={this.handleInput}
+                  error={errors.name}
+                />
+                <TextFieldGroup
+                  label="Email"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleInput}
+                  error={errors.email}
+                />
+                <TextFieldGroup
+                  label="Password"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleInput}
+                  error={errors.password}
+                />
+                <TextFieldGroup
+                  label="Password Confirm"
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="password2"
+                  value={password2}
+                  onChange={this.handleInput}
+                  error={errors.password2}
+                />
                 <button type="submit" className="button button-success">
                   Register{" "}
                 </button>{" "}

@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { loginUser } from "../../actions/authActions";
 import { connect } from "react-redux";
 import classnames from "classnames";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Login extends Component {
   state = {
@@ -13,8 +14,8 @@ class Login extends Component {
   };
 
   componentDidMount() {
-    if(this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard');
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
     }
   }
 
@@ -70,48 +71,25 @@ class Login extends Component {
                 className="column is-6 is-offset-3"
               >
                 <h2 className="title">Sign in</h2>
-                <div className="field">
-                  <label className="label">Email</label>
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.email
-                      })}
-                      type="email"
-                      placeholder="Email"
-                      name="email"
-                      value={email}
-                      onChange={this.handleInput}
-                    />
-                    {errors.email && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.email}{" "}
-                      </p>
-                    )}{" "}
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label">Password</label>
-                  <div className="control">
-                    <input
-                      className={classnames("input", {
-                        "is-danger": errors.password
-                      })}
-                      type="password"
-                      placeholder="Password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleInput}
-                    />
-                    {errors.password && (
-                      <p className="animated shake help has-text-danger">
-                        {" "}
-                        {errors.password}{" "}
-                      </p>
-                    )}{" "}
-                  </div>
-                </div>
+                <TextFieldGroup
+                  label="Email"
+                  name="email"
+                  type="email"
+                  value={email}
+                  onChange={this.handleInput}
+                  placeholder="Email"
+                  error={errors.email}
+                />
+
+                <TextFieldGroup
+                  label="Password"
+                  name="password"
+                  type="password"
+                  value={password}
+                  onChange={this.handleInput}
+                  placeholder="Password"
+                  error={errors.password}
+                />
                 <button type="submit" className="button button-success">
                   Sign in
                 </button>

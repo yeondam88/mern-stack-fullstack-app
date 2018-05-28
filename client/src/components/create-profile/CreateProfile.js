@@ -43,46 +43,48 @@ class CreateProfile extends Component {
     } = this.state;
     return (
       <Fragment>
-        <section className="hero is-danger is-bold">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">Create Profile</h1>
-              <h2 className="subtitle">
-                Let's get some information to make your profile stand out
-              </h2>
-              <p className="info">*= required fields</p>
-            </div>
-          </div>
-        </section>
         <section className="section">
           <div className="container">
-            <TextFieldGroup
-              label="Name"
-              type="text"
-              placeholder="Name"
-              name="name"
-              value={name}
-              onChange={this.handleInput}
-              error={errors.name}
-            />
-            <TextFieldGroup
-              label="Name"
-              type="text"
-              placeholder="Name"
-              name="name"
-              value={name}
-              onChange={this.handleInput}
-              error={errors.name}
-            />
-            <TextFieldGroup
-              label="Name"
-              type="text"
-              placeholder="Name"
-              name="name"
-              value={name}
-              onChange={this.handleInput}
-              error={errors.name}
-            />
+            <div className="columns">
+              <div className="column" />
+              <div className="column is-5">
+                <h1 className="title">Create Profile</h1>
+                <h2 className="subtitle">
+                  Let's get some information to make your profile stand out
+                </h2>
+                <p className="info">*= required fields</p>
+                <div className="box profile-form">
+                  <TextFieldGroup
+                    label="Name"
+                    type="text"
+                    placeholder="Handle"
+                    name="handle"
+                    value={handle}
+                    onChange={this.handleInput}
+                    error={errors.handle}
+                  />
+                  <TextFieldGroup
+                    label="Name"
+                    type="text"
+                    placeholder="Handle"
+                    name="handle"
+                    value={handle}
+                    onChange={this.handleInput}
+                    error={errors.handle}
+                  />
+                  <TextFieldGroup
+                    label="Name"
+                    type="text"
+                    placeholder="Handle"
+                    name="handle"
+                    value={handle}
+                    onChange={this.handleInput}
+                    error={errors.handle}
+                  />
+                </div>
+              </div>
+              <div className="column" />
+            </div>
           </div>
         </section>
       </Fragment>

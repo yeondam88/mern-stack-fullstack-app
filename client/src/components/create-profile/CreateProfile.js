@@ -97,6 +97,55 @@ class CreateProfile extends Component {
         value: "Other"
       }
     ];
+
+    let socialInputs;
+
+    if (displaySocialInputs) {
+      socialInputs = (
+        <div className="has-margin-bottom-15">
+          <InputGroup
+            placeholder="Twitter Profile URL"
+            name="twitter"
+            icon="fab fa-twitter"
+            value={twitter}
+            onChange={this.onChange}
+            errors={errors.twitter}
+          />
+          <InputGroup
+            placeholder="Facebook Profile URL"
+            name="facebook"
+            icon="fab fa-facebook"
+            value={facebook}
+            onChange={this.onChange}
+            errors={errors.facebook}
+          />
+          <InputGroup
+            placeholder="LinkedIn Profile URL"
+            name="linkedin"
+            icon="fab fa-linkedin"
+            value={linkedin}
+            onChange={this.onChange}
+            errors={errors.linkedin}
+          />
+          <InputGroup
+            placeholder="Youtube Profile URL"
+            name="youtube"
+            icon="fab fa-youtube"
+            value={youtube}
+            onChange={this.onChange}
+            errors={errors.youtube}
+          />
+          <InputGroup
+            placeholder="Instagram Profile URL"
+            name="instagram"
+            icon="fab fa-instagram"
+            value={instagram}
+            onChange={this.onChange}
+            errors={errors.instagram}
+          />
+        </div>
+      );
+    }
     return (
       <Fragment>
         <section className="section">
@@ -167,6 +216,29 @@ class CreateProfile extends Component {
                     onChange={this.onChange}
                     error={errors.bio}
                     info="Tell us a little about yourself"
+                  />
+                  <div className="buttons">
+                    <a
+                      className="button is-rounded"
+                      onClick={() => {
+                        this.setState(prevState => ({
+                          displaySocialInputs: !prevState.displaySocialInputs
+                        }));
+                      }}
+                    >
+                      <span className="icon">
+                        <i className="far fa-thumbs-up" />
+                      </span>
+                      <span>Add Social Network Links</span>
+                    </a>
+                    <sup>Optional</sup>
+                  </div>
+                  {socialInputs}
+                  <input
+                    style={{ width: "100%" }}
+                    type="submit"
+                    value="Submit"
+                    className="button is-primary"
                   />
                 </form>
               </div>

@@ -13,31 +13,26 @@ const InputGroup = ({
   onChange
 }) => {
   return (
-    <div className="field">
-      <div className="field-label" />
-      <div className="field-body">
-        <div className="field is-expanded">
-          <div className="field has-addons">
-            <p className="control">
-              <i className={icon} />
-            </p>
-            <p className="control is-expanded">
-              <input
-                className={classnames("textarea", {
-                  "is-danger": error
-                })}
-                placeholder={placeholder}
-                name={name}
-                value={value}
-                onChange={onChange}
-              />{" "}
-              {error && (
-                <p className="animated shake help has-text-danger"> {error} </p>
-              )}{" "}
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="field has-addons">
+      <p className="control">
+        <a className="button">
+          <i className={icon} />
+        </a>
+      </p>
+      <p className="control is-expanded">
+        <input
+          className={classnames("input", {
+            "is-danger": error
+          })}
+          placeholder={placeholder}
+          name={name}
+          value={value}
+          onChange={onChange}
+        />{" "}
+        {error && (
+          <p className="animated shake help has-text-danger"> {error} </p>
+        )}{" "}
+      </p>
     </div>
   );
 };

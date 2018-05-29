@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
+.has-margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
 .app-content {
   flex: 1
 }

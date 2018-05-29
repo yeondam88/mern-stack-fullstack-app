@@ -42,7 +42,7 @@ class App extends Component {
         <Router>
           <Fragment>
             <Navbar />
-            <main class="app-content">
+            <main className="app-content">
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route path="/register" component={Register} />

@@ -13,6 +13,7 @@ import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import Dashboard from "./dashboard/Dashboard";
 import CreateProfile from "./create-profile/CreateProfile";
+import EditProfile from "./edit-profile/EditProfile";
 import PrivateRoute from "../components/common/PrivateRoute";
 import store from "../store";
 
@@ -52,6 +53,7 @@ class App extends Component {
                   path="/create-profile"
                   component={CreateProfile}
                 />
+                <PrivateRoute path="/edit-profile" component={EditProfile} />
               </Switch>
             </main>
             <Footer />

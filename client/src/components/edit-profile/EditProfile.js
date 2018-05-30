@@ -55,15 +55,19 @@ class EditProfile extends Component {
         : "";
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
       profile.social = !isEmpty(profile.social) ? profile.social : {};
-      profile.twitter = !isEmpty(profile.twitter) ? profile.social.twitter : "";
-      profile.facebook = !isEmpty(profile.facebook)
+      profile.twitter = !isEmpty(profile.social.twitter)
+        ? profile.social.twitter
+        : "";
+      profile.facebook = !isEmpty(profile.social.facebook)
         ? profile.social.facebook
         : "";
-      profile.linkedin = !isEmpty(profile.linkedin)
+      profile.linkedin = !isEmpty(profile.social.linkedin)
         ? profile.social.linkedin
         : "";
-      profile.youtube = !isEmpty(profile.youtube) ? profile.social.youtube : "";
-      profile.instagram = !isEmpty(profile.instagram)
+      profile.youtube = !isEmpty(profile.social.youtube)
+        ? profile.social.youtube
+        : "";
+      profile.instagram = !isEmpty(profile.social.instagram)
         ? profile.social.instagram
         : "";
 
@@ -73,7 +77,7 @@ class EditProfile extends Component {
         website: profile.website,
         location: profile.location,
         status: profile.status,
-        skills: profile.skills,
+        skills: skillsCSV,
         githubusername: profile.githubusername,
         bio: profile.bio,
         twitter: profile.twitter,

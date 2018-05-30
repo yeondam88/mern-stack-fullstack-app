@@ -6,6 +6,7 @@ import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
 
 import Spinner from "../common/Spinner";
 import ProfileActions from "./ProfileActions";
+import Experience from "./Experience";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -28,10 +29,13 @@ class Dashboard extends Component {
           <div className="column" />
           <div
             className="column is-8"
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center"
+            }}
           >
             <Spinner />
-          </div>
+          </div>{" "}
           <div className="column" />
         </div>
       );
@@ -45,19 +49,24 @@ class Dashboard extends Component {
               <div>
                 <p className="title">
                   Welcome{" "}
-                  <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-                </p>
+                  <Link to={`/profile/${profile.handle}`}> {user.name} </Link>{" "}
+                </p>{" "}
                 <ProfileActions />
-                <div style={{ marginBottom: "60px" }}>
+                <Experience experience={profile.experience} />{" "}
+                <div
+                  style={{
+                    marginBottom: "60px"
+                  }}
+                >
                   <button
                     onClick={this.onDeleteClick}
                     className="button is-danger"
                   >
-                    Delete My Account
-                  </button>
-                </div>
-              </div>
-            </div>
+                    Delete My Account{" "}
+                  </button>{" "}
+                </div>{" "}
+              </div>{" "}
+            </div>{" "}
             <div className="column" />
           </div>
         );
@@ -65,16 +74,16 @@ class Dashboard extends Component {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
-            <p className="title">Welcome {user.name}</p>
-            <p>You have not yet setup a profile, please add some info</p>
+            <p className="title"> Welcome {user.name} </p>{" "}
+            <p> You have not yet setup a profile, please add some info </p>{" "}
             <Link to="/create-profile" className="button">
-              Create Profile
-            </Link>
+              Create Profile{" "}
+            </Link>{" "}
           </div>
         );
       }
     }
-    return <section className="section">{dashboardContent}</section>;
+    return <section className="section"> {dashboardContent} </section>;
   }
 }
 
@@ -90,6 +99,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(
-  Dashboard
-);
+export default connect(mapStateToProps, {
+  getCurrentProfile,
+  deleteAccount
+})(Dashboard);

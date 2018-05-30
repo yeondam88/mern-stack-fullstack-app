@@ -15,8 +15,10 @@ body {
   margin-bottom: 15px;
 }
 
-.app-content {
-  flex: 1
+.is-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-bg {

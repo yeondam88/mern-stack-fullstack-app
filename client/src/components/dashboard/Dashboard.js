@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileActions";
 
 import Spinner from "../common/Spinner";
+import ProfileActions from "./ProfileActions";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -22,12 +23,26 @@ class Dashboard extends Component {
     } else {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
-        dashboardContent = <h1>display profile</h1>;
+        dashboardContent = (
+          <div className="columns">
+            <div className="column" />
+            <div className="column is-8">
+              <div>
+                <p className="title">
+                  Welcome{" "}
+                  <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+                </p>
+                <ProfileActions />
+              </div>
+            </div>
+            <div className="column" />
+          </div>
+        );
       } else {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
-            <p className="title has-text-danger">Welcome {user.name}</p>
+            <p className="title">Welcome {user.name}</p>
             <p>You have not yet setup a profile, please add some info</p>
             <Link to="/create-profile" className="button">
               Create Profile

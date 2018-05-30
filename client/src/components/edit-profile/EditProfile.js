@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
@@ -232,6 +232,9 @@ class EditProfile extends Component {
             <div className="columns">
               <div className="column" />
               <div className="column is-5">
+                <Link to="/dashboard" className="button has-text-grey">
+                  Go Back{" "}
+                </Link>{" "}
                 <h1 className="title"> Edit Profile </h1>{" "}
                 <p className="info"> *= required fields </p>{" "}
                 <form onSubmit={this.onSubmit} className="box profile-form">

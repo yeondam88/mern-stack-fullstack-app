@@ -17,20 +17,22 @@ class Profiles extends Component {
       profileItems = <Spinner />;
     } else {
       if (profiles.length > 0) {
-        <ProfileItem profiles={profiles} />;
+        profileItems = (
+          <div className="columns is-multiline">
+            <ProfileItem profiles={profiles} />
+          </div>
+        );
       } else {
         profileItems = <h4>No profiles found...</h4>;
       }
     }
     return (
-      <div className="columns">
-        <div className="column" />
-        <div className="column is-5">
+      <div className="section">
+        <div className="container">
           <h1 className="title">Developers Profiles</h1>
           <p className="subtitle">Browse and connect with developers</p>
           {profileItems}
         </div>
-        <div className="column" />
       </div>
     );
   }

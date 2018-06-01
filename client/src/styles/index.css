@@ -47,6 +47,21 @@ body {
   color: black;
 }
 
+.card.user-profile {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 360px;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  transition-duration: 172ms;
+  will-change: transform, box-shadow;
+}
+
 .footer {
   padding: 1rem;
 }

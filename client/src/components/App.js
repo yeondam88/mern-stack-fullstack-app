@@ -47,12 +47,12 @@ class App extends Component {
           <Fragment>
             <Navbar />
             <main className="app-content">
+              <Route exact path="/" component={Landing} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/developers" component={Profiles} />
               <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Login} />
-                <Route paht="/developers" component={Profiles} />
-                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute
                   path="/create-profile"
                   component={CreateProfile}

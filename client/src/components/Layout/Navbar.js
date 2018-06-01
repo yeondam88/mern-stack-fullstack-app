@@ -17,30 +17,35 @@ class Navbar extends Component {
     const authLinks = (
       <div className="navbar-end">
         <Link to="/dashboard" className="navbar-item">
-          Dashboard
-        </Link>
+          Dashboard{" "}
+        </Link>{" "}
         <a className="navbar-item" onClick={this.logout}>
           <img
-            style={{ marginRight: "5px", width: "25px", borderRadius: "50%" }}
+            style={{
+              marginRight: "5px",
+              width: "25px",
+              borderRadius: "50%"
+            }}
             src={user.avatar}
             alt={user.name}
             title="You must have a gravatar connected to your email to display an image"
-          />Log out
-        </a>
+          />{" "}
+          Log out{" "}
+        </a>{" "}
       </div>
     );
 
     const notAuthLinks = (
       <div className="navbar-end">
         <Link to="/" className="navbar-item is-active">
-          Home
-        </Link>
+          Home{" "}
+        </Link>{" "}
         <Link to="/register" className="navbar-item">
-          Register
-        </Link>
+          Register{" "}
+        </Link>{" "}
         <Link to="/login" className="navbar-item">
-          Sign In
-        </Link>
+          Sign In{" "}
+        </Link>{" "}
       </div>
     );
 
@@ -53,18 +58,22 @@ class Navbar extends Component {
                 <img
                   src={Logo}
                   alt="logo"
-                  style={{ maxHeight: "4.75rem", width: "100%" }}
-                />
-              </a>
-              <Link to="/developer" className="navbar-item">
-                Developer
-              </Link>
-            </div>
+                  style={{
+                    maxHeight: "4.75rem",
+                    width: "100%"
+                  }}
+                />{" "}
+              </a>{" "}
+              <Link to="/developers" className="navbar-item">
+                Developers{" "}
+              </Link>{" "}
+            </div>{" "}
             <div className="navbar-menu">
-              {isAuthenticated ? authLinks : notAuthLinks}
-            </div>
-          </div>
-        </nav>
+              {" "}
+              {isAuthenticated ? authLinks : notAuthLinks}{" "}
+            </div>{" "}
+          </div>{" "}
+        </nav>{" "}
       </header>
     );
   }
@@ -80,6 +89,7 @@ const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
-  Navbar
-);
+export default connect(mapStateToProps, {
+  logoutUser,
+  clearCurrentProfile
+})(Navbar);

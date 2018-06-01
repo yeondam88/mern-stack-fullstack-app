@@ -17,11 +17,9 @@ class Profiles extends Component {
       profileItems = <Spinner />;
     } else {
       if (profiles.length > 0) {
-        profileItems = (
-          <div className="columns is-multiline">
-            <ProfileItem profiles={profiles} />
-          </div>
-        );
+        profileItems = profiles.map(profile => (
+          <ProfileItem profile={profile} key={profile._id} />
+        ));
       } else {
         profileItems = <h4>No profiles found...</h4>;
       }
@@ -31,7 +29,7 @@ class Profiles extends Component {
         <div className="container">
           <h1 className="title">Developers Profiles</h1>
           <p className="subtitle">Browse and connect with developers</p>
-          {profileItems}
+          <div className="columns is-multiline">{profileItems}</div>
         </div>
       </div>
     );

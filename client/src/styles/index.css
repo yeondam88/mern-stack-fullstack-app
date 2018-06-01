@@ -28,8 +28,16 @@ body {
   height: 50vh;
 }
 
+.pb-10 {
+  padding: 10px;
+}
+
 .pd-20 {
   padding: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
 }
 
 .navbar-section a {
@@ -53,13 +61,20 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 360px;
+  min-width: 360px;
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   overflow: hidden;
   transition-duration: 172ms;
   will-change: transform, box-shadow;
+  transition: .5s ease;
+}
+
+.card.user-profile:hover {
+  box-shadow: 0 10px 20px rgba(220, 220, 220, 0.5);
+  transform: translateY(-4px);
+  color: inherit;
 }
 
 .footer {

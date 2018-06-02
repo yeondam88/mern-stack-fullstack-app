@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -19,7 +19,36 @@ class Profile extends Component {
   }
 
   render() {
-    return <div>hello!!</div>;
+    const { profile, loading } = this.props.profile;
+    let profileContent;
+
+    if (profile === null || loading) {
+      profileContent = <Spinner />;
+    } else {
+      profileContent = (
+        <Fragment>
+          <ProfileHeader profile={profile} />
+          <ProfileAbout />
+          <ProfileCreds />
+          <ProfileGithub />
+        </Fragment>
+      );
+    }
+    return (
+      <div className="section">
+        <div className="container">
+          <div className="columns">
+            <div className="column is-4">
+              <Link to="/developers" className="button is-white">
+                Go Back
+              </Link>
+              <div>side bar!!</div>
+            </div>
+            <div className="column is-8">{profileContent}</div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

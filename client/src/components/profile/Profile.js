@@ -28,7 +28,6 @@ class Profile extends Component {
       profileContent = (
         <Fragment>
           <ProfileHeader profile={profile} />
-          <ProfileAbout />
           <ProfileCreds />
           <ProfileGithub />
         </Fragment>
@@ -42,7 +41,9 @@ class Profile extends Component {
               <Link to="/developers" className="button is-white">
                 Go Back
               </Link>
-              <div>side bar!!</div>
+              <div>
+                <ProfileAbout />
+              </div>
             </div>
             <div className="column is-8">{profileContent}</div>
           </div>

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import ProfileAbout from "./ProfileAbout";
-import ProfileHeader from "./ProfileHeader";
+import ProfileSideBar from "./ProfileSideBar";
 import ProfileCreds from "./ProfileCreds";
 import ProfileGithub from "./ProfileGithub";
 import Spinner from "../common/Spinner";
@@ -26,30 +26,27 @@ class Profile extends Component {
       profileContent = <Spinner />;
     } else {
       profileContent = (
-        <Fragment>
-          <ProfileHeader profile={profile} />
-          <ProfileCreds />
-          <ProfileGithub />
-        </Fragment>
+        <div className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-4">
+                <Link to="/developers" className="">
+                  Go Back{" "}
+                </Link>{" "}
+                <ProfileSideBar profile={profile} />
+                <div />{" "}
+              </div>{" "}
+              <div className="column is-8">
+                <ProfileCreds />
+                <ProfileGithub />
+                <ProfileAbout />
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>
       );
     }
-    return (
-      <div className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-4">
-              <Link to="/developers" className="button is-white">
-                Go Back
-              </Link>
-              <div>
-                <ProfileAbout />
-              </div>
-            </div>
-            <div className="column is-8">{profileContent}</div>
-          </div>
-        </div>
-      </div>
-    );
+    return <Fragment>{profileContent}</Fragment>;
   }
 }
 
@@ -61,4 +58,6 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getProfileByHandle })(Profile);
+export default connect(mapStateToProps, {
+  getProfileByHandle
+})(Profile);

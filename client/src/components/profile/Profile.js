@@ -28,16 +28,16 @@ class Profile extends Component {
       profileContent = (
         <div className="section">
           <div className="container">
+            <Link to="/developers" className="">
+              Go Back{" "}
+            </Link>{" "}
             <div className="columns">
               <div className="column is-4">
-                <Link to="/developers" className="">
-                  Go Back{" "}
-                </Link>{" "}
                 <ProfileSideBar profile={profile} />
                 <div />{" "}
               </div>{" "}
               <div className="column is-8">
-                <ProfileCreds />
+                <ProfileCreds profile={profile} />
                 <ProfileGithub />
                 <ProfileAbout />
               </div>{" "}

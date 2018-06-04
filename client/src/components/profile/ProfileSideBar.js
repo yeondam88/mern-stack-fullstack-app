@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import defaultImage from "../../images/default-user.png";
+import isEmpty from "../../validations/is-empty";
 
 class ProfileSideBar extends Component {
   render() {
@@ -11,11 +13,20 @@ class ProfileSideBar extends Component {
             <div className="inner-container" />
             <img
               className="image is-rounded profile-img"
-              src={profile.user.avatar}
-              alt={profile.user.name}
+              src={(profile.user && profile.user.avatar) || defaultImage}
+              alt={profile.user && profile.user.name}
             />
-            <h1 className="title is-4">{profile.user.name}</h1>
-            <h2 className="subtitle is-6">{profile.bio}</h2>
+            <h1 className="title is-4">{profile.user && profile.user.name}</h1>
+            <p className="is-size-6">
+              {profile.status} at{" "}
+              {isEmpty(profile.company) ? null : profile.company}
+            </p>
+            <p className="is-size-6">
+              {isEmpty(profile.location) ? null : profile.location}
+            </p>
+            <h2 className="subtitle is-6">
+              {isEmpty(profile.bio) ? null : profile.bio}
+            </h2>
           </div>
         </div>
       </div>

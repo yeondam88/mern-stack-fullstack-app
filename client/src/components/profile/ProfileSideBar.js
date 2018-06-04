@@ -24,6 +24,8 @@ class ProfileSideBar extends Component {
             <p className="is-size-6">
               {isEmpty(profile.location) ? null : profile.location}
             </p>
+            {isEmpty(profile.website) ? null : <a className="" href={profile.website} target="_blank"><i className="fas fa-globe fa-2x"></i></a>
+            {isEmpty(profile.social && profile.social.twitter) ? null : (<a href={profile.social.twitter} target="_blank"><i className="fas fa-globe fa-2x"></i></a>)}
             <h2 className="subtitle is-6">
               {isEmpty(profile.bio) ? null : profile.bio}
             </h2>

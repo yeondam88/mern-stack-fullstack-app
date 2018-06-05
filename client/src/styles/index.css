@@ -93,6 +93,11 @@ body {
   border: 3px solid white;
 }
 
+.social-group a {
+  color: black;
+  margin-right: 5px;
+}
+
 .footer {
   padding: 1rem;
 }

@@ -24,10 +24,47 @@ class ProfileSideBar extends Component {
             <p className="is-size-6">
               {isEmpty(profile.location) ? null : profile.location}
             </p>
-            {isEmpty(profile.website) ? null : <a className="" href={profile.website} target="_blank"><i className="fas fa-globe fa-2x"></i></a>
-            {isEmpty(profile.social && profile.social.twitter) ? null : (<a href={profile.social.twitter} target="_blank"><i className="fas fa-globe fa-2x"></i></a>)}
+            <div className="social-group">
+              <p>connecting with</p>
+              {isEmpty(profile.website) ? null : (
+                <a className="" href={profile.website} target="_blank">
+                  <i className="far fa-browser" />
+                </a>
+              )}
+              {isEmpty(profile.social && profile.social.twitter) ? null : (
+                <a href={profile.social.twitter} target="_blank">
+                  <i className="fab fa-twitter" />
+                </a>
+              )}
+              {isEmpty(profile.social && profile.social.facebook) ? null : (
+                <a href={profile.social.facebook} target="_blank">
+                  <i className="fab fa-facebook" />
+                </a>
+              )}
+              {isEmpty(profile.social && profile.social.linkedin) ? null : (
+                <a href={profile.social.linkedin} target="_blank">
+                  <i className="fab fa-linkedin" />
+                </a>
+              )}
+              {isEmpty(profile.social && profile.social.youtube) ? null : (
+                <a href={profile.social.youtube} target="_blank">
+                  <i className="fab fa-youtube" />
+                </a>
+              )}
+              {isEmpty(profile.social && profile.social.instagram) ? null : (
+                <a href={profile.social.instagram} target="_blank">
+                  <i className="fab fa-instagram" />
+                </a>
+              )}
+            </div>
+
             <h2 className="subtitle is-6">
-              {isEmpty(profile.bio) ? null : profile.bio}
+              {isEmpty(profile.bio) ? null : (
+                <p>
+                  <span>Bio:</span>
+                  {profile.bio}
+                </p>
+              )}
             </h2>
           </div>
         </div>

@@ -98,6 +98,17 @@ body {
   margin-right: 5px;
 }
 
+.profile-about {
+  height: 100%;
+  width: 100%;
+}
+
+.profile-about-img {
+  width: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
 .footer {
   padding: 1rem;
 }

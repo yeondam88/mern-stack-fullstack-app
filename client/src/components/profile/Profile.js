@@ -31,18 +31,22 @@ class Profile extends Component {
             <Link to="/developers" className="">
               Go Back{" "}
             </Link>{" "}
-            <div className="columns">
+            <div className="columns is-multiline">
               <div className="column is-4">
                 <ProfileSideBar profile={profile} />
                 <div />{" "}
               </div>{" "}
               <div className="column is-8">
+                <ProfileAbout profile={profile} />
+              </div>
+              <div className="column is-6">
                 <ProfileCreds profile={profile} />
+              </div>
+              <div className="column is-6">
                 <ProfileGithub />
-                <ProfileAbout />
-              </div>{" "}
-            </div>{" "}
-          </div>{" "}
+              </div>
+            </div>
+          </div>
         </div>
       );
     }

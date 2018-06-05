@@ -57,15 +57,6 @@ class ProfileSideBar extends Component {
                 </a>
               )}
             </div>
-
-            <h2 className="subtitle is-6">
-              {isEmpty(profile.bio) ? null : (
-                <p>
-                  <span>Bio:</span>
-                  {profile.bio}
-                </p>
-              )}
-            </h2>
           </div>
         </div>
       </div>

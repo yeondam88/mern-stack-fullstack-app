@@ -33,24 +33,23 @@ class Profile extends Component {
             </Link>{" "}
             <div className="columns is-multiline">
               <div className="column is-4">
-                <ProfileSideBar profile={profile} />
-                <div />{" "}
+                <ProfileSideBar profile={profile} /> <div />{" "}
               </div>{" "}
               <div className="column is-8">
-                <ProfileAbout profile={profile} />
-              </div>
+                <ProfileAbout profile={profile} />{" "}
+              </div>{" "}
               <div className="column is-6">
-                <ProfileCreds profile={profile} />
-              </div>
+                <ProfileCreds profile={profile} />{" "}
+              </div>{" "}
               <div className="column is-6">
-                <ProfileGithub profile={profile} />
-              </div>
-            </div>
-          </div>
+                <ProfileGithub username={profile.githubusername} />{" "}
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
         </div>
       );
     }
-    return <Fragment>{profileContent}</Fragment>;
+    return <Fragment> {profileContent} </Fragment>;
   }
 }
 

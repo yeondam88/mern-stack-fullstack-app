@@ -118,6 +118,19 @@ body {
   padding: 2rem;
 }
 
+.repo-item-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.repo-item-container a {
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .footer {
   padding: 1rem;
 }

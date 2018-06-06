@@ -21,16 +21,16 @@ class Profiles extends Component {
           <ProfileItem profile={profile} key={profile._id} />
         ));
       } else {
-        profileItems = <h4>No profiles found...</h4>;
+        profileItems = <h4> No profiles found... </h4>;
       }
     }
     return (
       <div className="section">
         <div className="container">
-          <h1 className="title">Developers Profiles</h1>
-          <p className="subtitle">Browse and connect with developers</p>
-          <div className="columns is-multiline">{profileItems}</div>
-        </div>
+          <h1 className="title"> Developers Profiles </h1>{" "}
+          <p className="subtitle"> Browse and connect with developers </p>{" "}
+          <div className="columns is-multiline profiles"> {profileItems} </div>{" "}
+        </div>{" "}
       </div>
     );
   }
@@ -45,4 +45,6 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { getProfiles })(Profiles);
+export default connect(mapStateToProps, {
+  getProfiles
+})(Profiles);

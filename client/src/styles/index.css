@@ -28,6 +28,10 @@ body {
   height: 50vh;
 }
 
+.profiles .spin-me-round-bb-bb-right-round {
+  margin: auto;
+}
+
 .pb-10 {
   padding: 10px;
 }

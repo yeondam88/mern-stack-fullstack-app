@@ -41,7 +41,7 @@ class ProfileGithub extends Component {
       } else {
         repo = repos.map(r => {
           return (
-            <div className="repo-item-container">
+            <div key={r.id} className="repo-item-container">
               <h3>
                 <Link to={r.html_url}>{r.name}</Link>
               </h3>
@@ -88,7 +88,7 @@ class ProfileGithub extends Component {
           alignItems: "center"
         }}
       >
-        <h2>Top 5 repositories</h2>
+        <h2>Latest Github repos</h2>
         {repo}
       </div>
     );

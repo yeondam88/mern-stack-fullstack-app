@@ -113,6 +113,11 @@ body {
   margin: 0 auto;
 }
 
+.edu,
+.exp {
+  padding: 2rem;
+}
+
 .footer {
   padding: 1rem;
 }

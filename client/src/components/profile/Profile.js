@@ -43,7 +43,7 @@ class Profile extends Component {
                 <ProfileCreds profile={profile} />
               </div>
               <div className="column is-6">
-                <ProfileGithub />
+                <ProfileGithub profile={profile} />
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ class ProfileGithub extends Component {
           return (
             <div key={r.id} className="repo-item-container">
               <h3>
-                <Link to={r.html_url}>{r.name}</Link>
+                <a href={r.html_url}>{r.name}</a>
               </h3>
               <span className="repo-info">
                 <div className="field is-grouped is-grouped-multiline">

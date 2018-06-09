@@ -62,7 +62,7 @@ class Dashboard extends Component {
                 >
                   <button
                     onClick={this.onDeleteClick}
-                    className="button is-danger"
+                    className="button is-danger is-mt-20"
                   >
                     Delete My Account{" "}
                   </button>{" "}

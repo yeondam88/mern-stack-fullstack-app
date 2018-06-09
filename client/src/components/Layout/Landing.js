@@ -48,7 +48,7 @@ class Landing extends Component {
           <div className="container">
             <div className="columns">
               <div className="column is-4">
-                <div className="card is-usp user-profile">
+                <div className="card is-usp user-profile landing-card">
                   <div
                     style={{
                       textAlign: "center"
@@ -67,7 +67,7 @@ class Landing extends Component {
                 </div>{" "}
               </div>{" "}
               <div className="column is-4">
-                <div className="card is-usp user-profile">
+                <div className="card is-usp user-profile landing-card">
                   <div
                     style={{
                       textAlign: "center"
@@ -86,7 +86,7 @@ class Landing extends Component {
                 </div>{" "}
               </div>{" "}
               <div className="column is-4">
-                <div className="card is-usp user-profile">
+                <div className="card is-usp user-profile landing-card">
                   <div
                     style={{
                       textAlign: "center"

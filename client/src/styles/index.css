@@ -21,6 +21,10 @@ body {
   align-items: center;
 }
 
+.is-mt-20 {
+  margin-top: 20px;
+}
+
 .main-bg {
   background-color: rgb(15, 1, 94);
   background-image: radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94));
@@ -73,6 +77,10 @@ body {
   transition-duration: 172ms;
   will-change: transform, box-shadow;
   transition: .5s ease;
+}
+
+.landing-card {
+  padding: 30px;
 }
 
 .card.user-profile:hover {

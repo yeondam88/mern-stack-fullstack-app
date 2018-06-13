@@ -121,6 +121,10 @@ body {
   border: 3px solid white;
 }
 
+.message.is-info {
+  border: 1px solid #eee;
+}
+
 .is-margin-auto {
   margin: 0 auto;
 }

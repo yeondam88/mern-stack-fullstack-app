@@ -16,6 +16,9 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
     const authLinks = (
       <div className="navbar-end">
+        <Link to="/feed" className="navbar-item">
+          Post Feed{" "}
+        </Link>{" "}
         <Link to="/dashboard" className="navbar-item">
           Dashboard{" "}
         </Link>{" "}

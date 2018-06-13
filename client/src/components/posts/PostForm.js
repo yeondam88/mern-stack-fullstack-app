@@ -34,7 +34,8 @@ class PostForm extends Component {
 
     this.setState({
       text: "",
-      submitted: true
+      submitted: true,
+      errors: {}
     });
 
     this.removeMessage();
@@ -56,11 +57,20 @@ class PostForm extends Component {
 
   render() {
     const { text, errors, submitted } = this.state;
+    let notification;
+    if (submitted) {
+      if (errors) {
+        notification = null;
+      } else {
+        notification = (
+          <div className="notification is-success">Post submitted..</div>
+        );
+      }
+    }
+
     return (
       <div>
-        {submitted && (
-          <div className="notification is-success">Post submitted..</div>
-        )}
+        {notification}
         <div className="message is-info">
           <p className="message-header">Say Something...</p>
           <div className="message-body">

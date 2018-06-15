@@ -3,8 +3,13 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import { deletePost } from "../../actions/postActions";
 
 class PostItem extends Component {
+  onDeleteClick = postId => {
+    this.props.deletePost(postId);
+  };
+
   render() {
     const { post, auth } = this.props;
 
@@ -46,7 +51,11 @@ class PostItem extends Component {
         </div>
         {auth.user.id === post.user ? (
           <div class="media-right">
-            <button class="delete" />
+            <button
+              type="button"
+              onClick={this.onDeleteClick.bind(this, post._id)}
+              class="delete"
+            />
           </div>
         ) : null}
       </article>
@@ -63,4 +72,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(PostItem);
+export default connect(mapStateToProps, { deletePost })(PostItem);

@@ -3,11 +3,19 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { deletePost } from "../../actions/postActions";
+import { deletePost, addLike, removeLike } from "../../actions/postActions";
 
 class PostItem extends Component {
   onDeleteClick = postId => {
     this.props.deletePost(postId);
+  };
+
+  onLikeClick = id => {
+    this.props.addLike(id);
+  };
+
+  onUnLikeClick = id => {
+    this.props.removeLike(id);
   };
 
   render() {
@@ -17,38 +25,47 @@ class PostItem extends Component {
       <article className="media">
         <figure className="media-left">
           <p className="image is-64x64">
-            <img src={post.avatar} />
-          </p>
-        </figure>
+            <img src={post.avatar} />{" "}
+          </p>{" "}
+        </figure>{" "}
         <div className="media-content">
           <div className="content">
             <p>
-              <strong>{post.name}</strong> <small>@{post.name}</small>{" "}
-              <small>{post.date}</small>
-              <br />
-              {post.text}
-            </p>
-          </div>
+              <strong> {post.name} </strong> <small>@{post.name}</small>{" "}
+              <small> {post.date} </small> <br /> {post.text}{" "}
+            </p>{" "}
+          </div>{" "}
           <nav className="level is-mobile">
             <div className="level-left">
               <a className="level-item">
                 <span className="icon is-small">
                   <i className="fas fa-reply" />
-                </span>
-              </a>
+                </span>{" "}
+              </a>{" "}
               <a className="level-item">
                 <span className="icon is-small">
                   <i className="fas fa-retweet" />
+                </span>{" "}
+              </a>{" "}
+              <a className="level-item">
+                <span
+                  onClick={this.onLikeClick.bind(this, post._id)}
+                  className="icon is-small"
+                >
+                  <i className="fas fa-thumbs-up" /> {post.likes.length}
                 </span>
               </a>
               <a className="level-item">
-                <span className="icon is-small">
-                  <i className="fas fa-heart" />
+                <span
+                  onClick={this.onUnLikeClick.bind(this, post._id)}
+                  className="icon is-small"
+                >
+                  <i className="fas fa-thumbs-down" />
                 </span>
               </a>
-            </div>
-          </nav>
-        </div>
+            </div>{" "}
+          </nav>{" "}
+        </div>{" "}
         {auth.user.id === post.user ? (
           <div class="media-right">
             <button
@@ -57,13 +74,16 @@ class PostItem extends Component {
               class="delete"
             />
           </div>
-        ) : null}
+        ) : null}{" "}
       </article>
     );
   }
 }
 
 PostItem.propTypes = {
+  deletePost: PropTypes.func.isRequired,
+  addLike: PropTypes.func.isRequired,
+  removeLike: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -72,4 +92,8 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { deletePost })(PostItem);
+export default connect(mapStateToProps, {
+  deletePost,
+  addLike,
+  removeLike
+})(PostItem);

@@ -27,13 +27,12 @@ class Posts extends Component {
             <div className="columns">
               <div className="column" />
               <div className="column is-8">
-                <PostForm />
-                {postContent}
-              </div>
+                <PostForm /> {postContent}{" "}
+              </div>{" "}
               <div className="column" />
-            </div>
-          </div>
-        </div>
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }
@@ -48,4 +47,6 @@ const mapStateToProps = state => ({
   post: state.post
 });
 
-export default connect(mapStateToProps, { getPosts })(Posts);
+export default connect(mapStateToProps, {
+  getPosts
+})(Posts);

@@ -28,7 +28,7 @@ class PostItem extends Component {
   };
 
   render() {
-    const { post, auth } = this.props;
+    const { post, auth, showActions } = this.props;
 
     return (
       <article className="media">
@@ -44,41 +44,45 @@ class PostItem extends Component {
               <small> {post.date} </small> <br /> {post.text}{" "}
             </p>{" "}
           </div>{" "}
-          <nav className="level is-mobile">
-            <div className="level-left">
-              <a className="level-item">
-                <span className="icon is-small">
-                  <i className="fas fa-reply" />
-                </span>{" "}
-              </a>{" "}
-              <a className="level-item">
-                <span className="icon is-small">
-                  <i className="fas fa-retweet" />
-                </span>{" "}
-              </a>{" "}
-              <a className="level-item">
-                <span
-                  onClick={this.onLikeClick.bind(this, post._id)}
-                  className="icon is-small"
-                >
-                  <i
-                    className={classnames("fas fa-thumbs-up", {
-                      "has-text-success": this.findUserLike(post.likes)
-                    })}
-                  />{" "}
-                  {post.likes.length}
-                </span>
-              </a>
-              <a className="level-item">
-                <span
-                  onClick={this.onUnLikeClick.bind(this, post._id)}
-                  className="icon is-small"
-                >
-                  <i className="fas fa-thumbs-down" />
-                </span>
-              </a>
-            </div>{" "}
-          </nav>{" "}
+          {showActions ? (
+            <nav className="level is-mobile">
+              <div className="level-left">
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <Link to={`/post/${post._id}`}>
+                      <i className="fas fa-reply" />
+                    </Link>{" "}
+                  </span>{" "}
+                </a>{" "}
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <i className="fas fa-retweet" />
+                  </span>{" "}
+                </a>{" "}
+                <a className="level-item">
+                  <span
+                    onClick={this.onLikeClick.bind(this, post._id)}
+                    className="icon is-small"
+                  >
+                    <i
+                      className={classnames("fas fa-thumbs-up", {
+                        "has-text-success": this.findUserLike(post.likes)
+                      })}
+                    />{" "}
+                    {post.likes.length}{" "}
+                  </span>{" "}
+                </a>{" "}
+                <a className="level-item">
+                  <span
+                    onClick={this.onUnLikeClick.bind(this, post._id)}
+                    className="icon is-small"
+                  >
+                    <i className="fas fa-thumbs-down" />
+                  </span>{" "}
+                </a>{" "}
+              </div>{" "}
+            </nav>
+          ) : null}
         </div>{" "}
         {auth.user.id === post.user ? (
           <div class="media-right">
@@ -93,6 +97,10 @@ class PostItem extends Component {
     );
   }
 }
+
+PostItem.defaultProps = {
+  showActions: true
+};
 
 PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,

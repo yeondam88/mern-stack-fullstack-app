@@ -19,6 +19,7 @@ import AddEducation from "./add-credentials/AddEducation";
 import Profiles from "./profiles/Profiles";
 import Profile from "./profile/Profile";
 import Posts from "./posts/Posts";
+import Post from "./post/Post";
 import PrivateRoute from "../components/common/PrivateRoute";
 import store from "../store";
 
@@ -67,6 +68,7 @@ class App extends Component {
                 />
                 <PrivateRoute path="/add-education" component={AddEducation} />
                 <PrivateRoute path="/feed" component={Posts} />
+                <PrivateRoute path="/post/:id" component={Post} />
               </Switch>
             </main>
             <Footer />

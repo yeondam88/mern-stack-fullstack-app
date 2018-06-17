@@ -18,6 +18,15 @@ class PostItem extends Component {
     this.props.removeLike(id);
   };
 
+  findUserLike = likes => {
+    const { auth } = this.props;
+    if (likes.filter(like => like.user === auth.user.id).length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   render() {
     const { post, auth } = this.props;
 
@@ -52,7 +61,12 @@ class PostItem extends Component {
                   onClick={this.onLikeClick.bind(this, post._id)}
                   className="icon is-small"
                 >
-                  <i className="fas fa-thumbs-up" /> {post.likes.length}
+                  <i
+                    className={classnames("fas fa-thumbs-up", {
+                      "has-text-success": this.findUserLike(post.likes)
+                    })}
+                  />{" "}
+                  {post.likes.length}
                 </span>
               </a>
               <a className="level-item">

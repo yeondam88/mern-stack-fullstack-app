@@ -47,13 +47,13 @@ class PostItem extends Component {
           {showActions ? (
             <nav className="level is-mobile">
               <div className="level-left">
-                <a className="level-item">
+                <div className="level-item">
                   <span className="icon is-small">
                     <Link to={`/post/${post._id}`}>
                       <i className="fas fa-reply" />
                     </Link>{" "}
                   </span>{" "}
-                </a>{" "}
+                </div>{" "}
                 <a className="level-item">
                   <span className="icon is-small">
                     <i className="fas fa-retweet" />
@@ -84,15 +84,6 @@ class PostItem extends Component {
             </nav>
           ) : null}
         </div>{" "}
-        {auth.user.id === post.user ? (
-          <div class="media-right">
-            <button
-              type="button"
-              onClick={this.onDeleteClick.bind(this, post._id)}
-              class="delete"
-            />
-          </div>
-        ) : null}{" "}
       </article>
     );
   }

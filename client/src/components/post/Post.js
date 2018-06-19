@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import PostItem from "../posts/PostItem";
 import CommentForm from "./CommentForm";
+import CommentFeed from "./CommentFeed";
 import Spinner from "../common/Spinner";
 import { getPost } from "../../actions/postActions";
 
@@ -21,8 +22,9 @@ class Post extends Component {
     } else {
       postContent = (
         <div>
-          <PostItem post={post} showActions={false} />
-          <CommentForm postId={post._id} />
+          <PostItem post={post} showActions={false} />{" "}
+          <CommentForm postId={post._id} />{" "}
+          <CommentFeed postId={post._id} comments={post.comments} />{" "}
         </div>
       );
     }
@@ -32,12 +34,12 @@ class Post extends Component {
           <div className="column" />
           <div className="column is-8">
             <Link to="/feed" className="button is-text">
-              Back to Feed
-            </Link>
-            {postContent}
-          </div>
+              Back to Feed{" "}
+            </Link>{" "}
+            {postContent}{" "}
+          </div>{" "}
           <div className="column" />
-        </div>
+        </div>{" "}
       </div>
     );
   }

@@ -82,8 +82,16 @@ class PostItem extends Component {
                 </a>{" "}
               </div>{" "}
             </nav>
-          ) : null}
+          ) : null}{" "}
         </div>{" "}
+        {post.user === auth.user.id ? (
+          <span
+            onClick={this.onDeleteClick.bind(this, post._id)}
+            className="icon is-small"
+          >
+            <i className="fas fa-times" />
+          </span>
+        ) : null}{" "}
       </article>
     );
   }

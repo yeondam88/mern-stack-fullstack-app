@@ -11,14 +11,14 @@ class CommentItem extends Component {
       <article className="media">
         <figure className="media-left">
           <p className="image is-64x64">
-            <img src={post.avatar} />{" "}
+            <img src={comment.avatar} />{" "}
           </p>{" "}
         </figure>{" "}
         <div className="media-content">
           <div className="content">
             <p>
-              <strong> {post.name} </strong> <small>@{post.name}</small>{" "}
-              <small> {post.date} </small> <br /> {post.text}{" "}
+              <strong> {comment.name} </strong> <small>@{comment.name}</small>{" "}
+              <small> {comment.date} </small> <br /> {comment.text}{" "}
             </p>{" "}
           </div>{" "}
           {showActions ? (
@@ -26,7 +26,7 @@ class CommentItem extends Component {
               <div className="level-left">
                 <div className="level-item">
                   <span className="icon is-small">
-                    <Link to={`/post/${post._id}`}>
+                    <Link to={`/post/${postId}`}>
                       <i className="fas fa-reply" />
                     </Link>{" "}
                   </span>{" "}
@@ -38,7 +38,7 @@ class CommentItem extends Component {
                 </a>{" "}
                 <a className="level-item">
                   <span
-                    onClick={this.onLikeClick.bind(this, post._id)}
+                    onClick={this.onLikeClick.bind(this, postId)}
                     className="icon is-small"
                   >
                     <i
@@ -51,7 +51,7 @@ class CommentItem extends Component {
                 </a>{" "}
                 <a className="level-item">
                   <span
-                    onClick={this.onUnLikeClick.bind(this, post._id)}
+                    onClick={this.onUnLikeClick.bind(this, postId)}
                     className="icon is-small"
                   >
                     <i className="fas fa-thumbs-down" />
@@ -62,9 +62,9 @@ class CommentItem extends Component {
           ) : null}
         </div>{" "}
         <div className="media-right">
-          {post.user === auth.user.id ? (
+          {comment.user === auth.user.id ? (
             <span
-              onClick={this.onDeleteClick.bind(this, post._id)}
+              onClick={this.onDeleteClick.bind(this, postId)}
               className="icon is-small"
             >
               <i className="fas fa-times" />

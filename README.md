@@ -16,9 +16,10 @@ Currently implemented features..
 - Edit Profile
 - Delete Profile
 - View Profiles
+- Add Comment on post
+- Remove Comment
 
 Will be adding these things..
-- Add comment on post
 - More detail in profile component
 - follow / unfollow
 - deploy to web

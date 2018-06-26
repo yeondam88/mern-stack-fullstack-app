@@ -43,40 +43,42 @@ class ProfileGithub extends Component {
           return (
             <div key={r.id} className="repo-item-container">
               <h3>
-                <a href={r.html_url}>{r.name}</a>
-              </h3>
+                <a href={r.html_url}> {r.name} </a>{" "}
+              </h3>{" "}
               <span className="repo-info">
                 <div className="field is-grouped is-grouped-multiline">
                   <div className="control">
                     <div className="tags has-addons">
-                      <span className="tag is-dark">fork</span>
-                      <span className="tag is-info">{r.forks}</span>
-                    </div>
+                      <span className="tag is-dark"> fork </span>{" "}
+                      <span className="tag is-info"> {r.forks} </span>{" "}
+                    </div>{" "}
                   </div>
-
                   <div className="control">
                     <div className="tags has-addons">
-                      <span className="tag is-dark">star</span>
+                      <span className="tag is-dark"> star </span>{" "}
                       <span className="tag is-success">
-                        {r.stargazers_count}
-                      </span>
-                    </div>
+                        {" "}
+                        {r.stargazers_count}{" "}
+                      </span>{" "}
+                    </div>{" "}
                   </div>
-
                   <div className="control">
                     <div className="tags has-addons">
-                      <span className="tag is-dark">watchers</span>
-                      <span className="tag is-primary">{r.watchers_count}</span>
-                    </div>
-                  </div>
-                </div>
-              </span>
+                      <span className="tag is-dark"> watchers </span>{" "}
+                      <span className="tag is-primary">
+                        {" "}
+                        {r.watchers_count}{" "}
+                      </span>{" "}
+                    </div>{" "}
+                  </div>{" "}
+                </div>{" "}
+              </span>{" "}
             </div>
           );
         });
       }
     } else {
-      repo = <p>No repository found</p>;
+      repo = <p> No repository found </p>;
     }
     console.log(repos);
     return (
@@ -88,8 +90,7 @@ class ProfileGithub extends Component {
           alignItems: "center"
         }}
       >
-        <h2>Latest Github repos</h2>
-        {repo}
+        <h2> Latest Github repos </h2> {repo}{" "}
       </div>
     );
   }

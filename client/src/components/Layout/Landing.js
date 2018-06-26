@@ -28,10 +28,19 @@ class Landing extends Component {
                   </h2>{" "}
                   <div className="field is-grouped">
                     <div className="control">
-                      <a className="button is-primary is-medium"> Register </a>{" "}
+                      <Link
+                        to="/register"
+                        className="button is-primary is-medium"
+                      >
+                        {" "}
+                        Register{" "}
+                      </Link>{" "}
                     </div>{" "}
                     <div className="control">
-                      <a className="button is-primary is-medium"> Sign in </a>{" "}
+                      <Link to="/login" className="button is-primary is-medium">
+                        {" "}
+                        Sign in{" "}
+                      </Link>{" "}
                     </div>{" "}
                   </div>{" "}
                 </div>{" "}
@@ -55,7 +64,7 @@ class Landing extends Component {
                     }}
                   >
                     <img src={icon1} alt="logo" width="50px" />
-                  </div>
+                  </div>{" "}
                   <hr className="spacer is-1" />
                   <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
                   <p className="subtitle is-5">
@@ -120,4 +129,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, null)(Landing);
+export default connect(
+  mapStateToProps,
+  null
+)(Landing);

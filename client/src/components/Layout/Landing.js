@@ -24,7 +24,7 @@ class Landing extends Component {
                 <div className="section-header">
                   <h1 className="title is-spaced"> Devconnector </h1>{" "}
                   <h2 className="subtitle is-3">
-                    Socail Network for Developer{" "}
+                    Social Network for Developer{" "}
                   </h2>{" "}
                   <div className="field is-grouped">
                     <div className="control">

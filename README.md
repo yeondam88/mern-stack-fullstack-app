@@ -2,6 +2,14 @@
 
 This is Udemy course by Brad(Travery Media).
 I am building Mini developer social network app by using MERN stack.
+<p>
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633710/react-original.svg" width="50" />
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633860/css3-original.svg" width="50" />
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633793/nodejs-original.svg" width="50" />
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633735/express-original.svg" width="50" />
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633803/mongodb-original-wordmark.svg" width="50" />
+  <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633699/heroku-original.svg" width="50" />
+</p>
 
 Currently using stacks are 
 - React

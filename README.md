@@ -12,6 +12,10 @@ I extended the course with my own styles, features with custom coded by myself
   <img src="https://res.cloudinary.com/yeondam88/image/upload/v1537633699/heroku-original.svg" width="50" />
 </p>
 
+<p>
+  <img src="devconnector.png" />
+</p>
+
 Currently using stacks are 
 - React
 - Redux

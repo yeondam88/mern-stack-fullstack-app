@@ -17,8 +17,8 @@ class Profiles extends Component {
       profileItems = <Spinner />;
     } else {
       if (profiles.length > 0) {
-        profileItems = profiles.map(profile => (
-          <ProfileItem profile={profile} key={profile._id} />
+        profileItems = profiles.map((profile, index) => (
+          <ProfileItem profile={profile} key={profile._id} index={index} />
         ));
       } else {
         profileItems = <h4> No profiles found... </h4>;
@@ -45,6 +45,9 @@ const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, {
-  getProfiles
-})(Profiles);
+export default connect(
+  mapStateToProps,
+  {
+    getProfiles
+  }
+)(Profiles);

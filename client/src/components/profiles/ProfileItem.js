@@ -4,16 +4,28 @@ import { Link } from "react-router-dom";
 import defaultImage from "../../images/default-user.png";
 import isEmpty from "../../validations/is-empty";
 
+const keywords = [
+  "music",
+  "sports",
+  "car",
+  "landscape",
+  "skyline",
+  "flower",
+  "beach",
+  "festival"
+];
+
 class ProfileItem extends React.Component {
   render() {
-    const { profile } = this.props;
+    const { profile, index } = this.props;
     return (
       <div className="column is-4 is-flex">
         <div className="card user-profile">
           <div className="card-image">
             <figure className="image is-4by3">
               <img
-                src="https://source.unsplash.com/random/1280x960"
+                src={`https://source.unsplash.com/featured/?${keywords[index]}
+                }`}
                 alt="Placeholder image"
               />
             </figure>{" "}

@@ -78,7 +78,7 @@ class CommentForm extends Component {
         <form onSubmit={this.onSubmit} className="media">
           <figure className="media-left">
             <p className="image is-64x64">
-              <img src={user.avatar} />
+              <img src={user.avatar} alt="avatar" />
             </p>
           </figure>
           <div className="media-content">
@@ -119,6 +119,9 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, {
-  addComment
-})(CommentForm);
+export default connect(
+  mapStateToProps,
+  {
+    addComment
+  }
+)(CommentForm);

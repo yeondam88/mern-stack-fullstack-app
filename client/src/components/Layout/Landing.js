@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import CodeImg from "../../images/lighthouse.jpg";
 import icon1 from "../../images/offices.svg";
 import icon2 from "../../images/process.svg";
 import icon3 from "../../images/coding.svg";
+import bg from "../../images/devconnector-bg.jpg";
 
 class Landing extends Component {
   componentDidMount() {
@@ -18,9 +18,17 @@ class Landing extends Component {
     return (
       <Fragment>
         <section className="is-hero section">
+          <div
+            className="main-bg"
+            style={{
+              background: `url(${bg})`,
+              backgroundSize: "cover",
+              filter: "grayscale(100%)"
+            }}
+          />
           <div className="container">
             <div className="columns is-vcentered">
-              <div className="column is-6 is-5-fullhd is-offset-1-fullhd">
+              <div className="column is-12">
                 <div className="section-header">
                   <h1 className="title is-spaced"> Devconnector </h1>{" "}
                   <h2 className="subtitle is-3">
@@ -43,11 +51,6 @@ class Landing extends Component {
                       </Link>{" "}
                     </div>{" "}
                   </div>{" "}
-                </div>{" "}
-              </div>{" "}
-              <div className="column is-6">
-                <div className="section-media">
-                  <img src={CodeImg} alt="code" />
                 </div>{" "}
               </div>{" "}
             </div>{" "}

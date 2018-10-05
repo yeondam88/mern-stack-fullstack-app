@@ -6,7 +6,6 @@ class ProfileCreds extends Component {
     const { education, experience } = this.props.profile;
     let educationTable;
     let experienceTable;
-    let credTable;
     if (education.length > 0 && experience.length > 0) {
       educationTable = education.map(exp => (
         <tr key={exp._id}>

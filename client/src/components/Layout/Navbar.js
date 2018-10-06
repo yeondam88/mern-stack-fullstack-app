@@ -57,7 +57,7 @@ class Navbar extends Component {
         <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
-              <a className="navbar-item">
+              <Link className="navbar-item" to="/">
                 <img
                   src={Logo}
                   alt="logo"
@@ -65,7 +65,7 @@ class Navbar extends Component {
                     maxHeight: "4.75rem"
                   }}
                 />{" "}
-              </a>{" "}
+              </Link>{" "}
               <Link to="/developers" className="navbar-item">
                 Developers{" "}
               </Link>{" "}

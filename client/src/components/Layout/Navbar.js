@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
-import Logo from "../../images/dev.svg";
+import Logo from "../../images/logo_transparent.png";
 
 class Navbar extends Component {
   logout = () => {
@@ -62,8 +62,7 @@ class Navbar extends Component {
                   src={Logo}
                   alt="logo"
                   style={{
-                    maxHeight: "4.75rem",
-                    width: "100%"
+                    maxHeight: "4.75rem"
                   }}
                 />{" "}
               </a>{" "}
@@ -92,7 +91,10 @@ const mapStateToProps = state => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, {
-  logoutUser,
-  clearCurrentProfile
-})(Navbar);
+export default connect(
+  mapStateToProps,
+  {
+    logoutUser,
+    clearCurrentProfile
+  }
+)(Navbar);

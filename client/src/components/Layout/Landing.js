@@ -152,7 +152,7 @@ class Landing extends Component {
               />
             </div>
             <div className="column is-4">
-              <div className="content">
+              <div className="banner-content">
                 <h1>Devconnector</h1>
                 <p>Help us to connect to the world</p>
               </div>
@@ -165,7 +165,7 @@ class Landing extends Component {
         >
           <div className="columns">
             <div className="column is-4">
-              <div className="content">
+              <div className="banner-content">
                 <h1>Devconnector</h1>
                 <p>Help us to connect to the world</p>
               </div>

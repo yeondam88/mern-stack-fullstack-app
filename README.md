@@ -13,7 +13,7 @@ I extended the course with my own styles, features with custom coded by myself
 </p>
 
 <p>
-  <img src="devconnector.png" />
+  <img src="devconnector-screencapture.png" />
 </p>
 
 Currently using stacks are 

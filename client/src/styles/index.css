@@ -286,3 +286,26 @@ body {
   justify-content: center;
   height: 100%;
 }
+
+.connect {
+  text-align: center;
+}
+
+.connect h2 {
+  font-size: 2rem;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social-container a {
+  color: inherit;
+}
+
+.social-item {
+  font-size: 1.5rem;
+  padding: 1rem;
+}

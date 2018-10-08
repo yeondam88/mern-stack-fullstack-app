@@ -192,6 +192,40 @@ class Landing extends Component {
             </div>
           </Slide>
         </section>
+        <section className="container connect">
+          <Fade bottom>
+            <h2>Connect</h2>
+            <div className="social-container">
+              <a
+                href="https://www.facebook.com/yeondam.park"
+                rel="noopener"
+                target="_blank"
+              >
+                <div className="social-item">
+                  <i class="fab fa-facebook-f" />
+                </div>
+              </a>
+              <a
+                href="https://www.twitter.com/lloydpark88"
+                rel="noopener"
+                target="_blank"
+              >
+                <div className="social-item">
+                  <i class="fab fa-twitter" />
+                </div>
+              </a>
+              <a
+                href="https://www.github.com/yeondam88"
+                rel="noopener"
+                target="_blank"
+              >
+                <div className="social-item">
+                  <i class="fab fa-github" />
+                </div>
+              </a>
+            </div>
+          </Fade>
+        </section>
       </Fragment>
     );
   }

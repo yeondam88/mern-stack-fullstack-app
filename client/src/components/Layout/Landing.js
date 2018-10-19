@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
-import icon1 from "../../images/offices.svg";
-import icon2 from "../../images/process.svg";
-import icon3 from "../../images/coding.svg";
+import icon1 from "../../images/social_banner_1.svg";
+import icon2 from "../../images/social_banner_2.svg";
+import icon3 from "../../images/social_banner_3.svg";
 import bg from "../../images/devconnector-bg.jpg";
 import devObj from "../../images/devObj.png";
 
@@ -95,7 +95,7 @@ class Landing extends Component {
                         textAlign: "center"
                       }}
                     >
-                      <img src={icon1} alt="logo" width="50px" />
+                      <img src={icon1} alt="logo" width="200px" />
                     </div>{" "}
                     <hr className="spacer is-1" />
                     <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
@@ -116,7 +116,11 @@ class Landing extends Component {
                         textAlign: "center"
                       }}
                     >
-                      <img src={icon2} alt="logo" width="50px" />
+                      <img
+                        src={icon2}
+                        alt="logo"
+                        style={{ width: "200px", height: "180px" }}
+                      />
                     </div>{" "}
                     <hr className="spacer is-1" />
                     <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
@@ -137,7 +141,7 @@ class Landing extends Component {
                         textAlign: "center"
                       }}
                     >
-                      <img src={icon3} alt="logo" width="50px" />
+                      <img src={icon3} alt="logo" width="200px" />
                     </div>{" "}
                     <hr className="spacer is-1" />
                     <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
@@ -198,29 +202,29 @@ class Landing extends Component {
             <div className="social-container">
               <a
                 href="https://www.facebook.com/yeondam.park"
-                rel="noopener"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="social-item">
-                  <i class="fab fa-facebook-f" />
+                  <i className="fab fa-facebook-f" />
                 </div>
               </a>
               <a
                 href="https://www.twitter.com/lloydpark88"
-                rel="noopener"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="social-item">
-                  <i class="fab fa-twitter" />
+                  <i className="fab fa-twitter" />
                 </div>
               </a>
               <a
                 href="https://www.github.com/yeondam88"
-                rel="noopener"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 <div className="social-item">
-                  <i class="fab fa-github" />
+                  <i className="fab fa-github" />
                 </div>
               </a>
             </div>

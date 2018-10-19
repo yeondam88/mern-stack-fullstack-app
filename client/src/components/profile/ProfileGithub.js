@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Spinner from "../common/Spinner";
-import axios from "axios";
 
 import { clientId, clientSecret } from "../../apiKey";
 

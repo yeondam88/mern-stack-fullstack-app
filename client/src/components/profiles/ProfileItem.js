@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import defaultImage from "../../images/default-user.png";
-import isEmpty from "../../validations/is-empty";
 
 const keywords = [
   "music",
@@ -26,7 +24,7 @@ class ProfileItem extends React.Component {
               <img
                 src={`https://source.unsplash.com/featured/?${keywords[index]}
                 }`}
-                alt="Placeholder image"
+                alt="profile card"
               />
             </figure>{" "}
           </div>{" "}
@@ -37,7 +35,7 @@ class ProfileItem extends React.Component {
                   <img
                     className="is-rounded"
                     src={(profile.user && profile.user.avatar) || defaultImage}
-                    alt="Placeholder image"
+                    alt="User Avatar"
                   />
                 </figure>{" "}
               </div>{" "}

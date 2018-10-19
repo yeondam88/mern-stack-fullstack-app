@@ -1,7 +1,6 @@
 import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import { GET_ERRORS } from "../../actions/actionTypes";
 
 const TextAreaFieldGroup = ({
   name,

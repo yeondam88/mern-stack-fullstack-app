@@ -9,13 +9,13 @@ class CommentItem extends Component {
   };
 
   render() {
-    const { comment, postId, auth } = this.props;
+    const { comment, auth } = this.props;
 
     return (
       <article className="media">
         <figure className="media-left">
           <p className="image is-64x64">
-            <img src={comment.avatar} />{" "}
+            <img src={comment.avatar} alt="avatar" />{" "}
           </p>{" "}
         </figure>{" "}
         <div className="media-content">
@@ -52,4 +52,7 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { deleteComment })(CommentItem);
+export default connect(
+  mapStateToProps,
+  { deleteComment }
+)(CommentItem);

@@ -35,7 +35,7 @@ class PostItem extends Component {
         <article className="media">
           <figure className="media-left">
             <p className="image is-64x64">
-              <img src={post.avatar} />{" "}
+              <img src={post.avatar} alt="user avatar" />{" "}
             </p>{" "}
           </figure>{" "}
           <div className="media-content">
@@ -110,8 +110,11 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, {
-  deletePost,
-  addLike,
-  removeLike
-})(PostItem);
+export default connect(
+  mapStateToProps,
+  {
+    deletePost,
+    addLike,
+    removeLike
+  }
+)(PostItem);

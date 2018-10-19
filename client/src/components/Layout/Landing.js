@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
-import Slide from "react-reveal/Slide";
 
 import icon1 from "../../images/social_banner_4.svg";
 import icon2 from "../../images/social_banner_2.svg";
 import icon3 from "../../images/social_banner_3.svg";
 import bg from "../../images/devconnector-bg.jpg";
-import devObj from "../../images/devObj.png";
+
+import section1 from "../../images/section_banner_1.svg";
+import section2 from "../../images/section_banner_3.svg";
+import social_media from "../../images/social_media_img.svg";
 
 class Landing extends Component {
   componentDidMount() {
@@ -166,40 +168,42 @@ class Landing extends Component {
           className="container"
           style={{ marginTop: "10rem", marginBottom: "10rem" }}
         >
-          <Slide left>
-            <div className="columns">
-              <div className="column is-8">
-                <img
-                  src="http://source.unsplash.com/random/900x600"
-                  alt="random bg"
-                />
-              </div>
-              <div className="column is-4">
-                <div className="banner-content">
-                  <h1>Devconnector</h1>
-                  <p>Help us to connect to the world</p>
-                </div>
+          <div className="columns">
+            <div className="column is-7">
+              <img src={section1} alt="random bg" />
+            </div>
+            <div className="column is-5">
+              <div className="banner-content">
+                <h2 className="title is-1">Open Source</h2>
+                <p style={{ width: "60%", textAlign: "center" }}>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Fugiat minima ut at! Nisi placeat temporibus dolorem voluptate
+                  architecto, vero possimus cumque? Labore cumque ab dolorum
+                  est. Eum soluta sunt neque?
+                </p>
               </div>
             </div>
-          </Slide>
+          </div>
         </section>
         <section
           className="container"
           style={{ marginTop: "10rem", marginBottom: "10rem" }}
         >
-          <Slide right>
-            <div className="columns">
-              <div className="column is-4">
-                <div className="banner-content">
-                  <h1>Devconnector</h1>
-                  <p>Help us to connect to the world</p>
-                </div>
-              </div>
-              <div className="column is-8">
-                <img src={devObj} alt="random bg" />
+          <div className="columns">
+            <div className="column is-8">
+              <div className="banner-content">
+                <h2 className="title is-1">Built for Developers</h2>
+                <p style={{ width: "50%", textAlign: "center" }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis accusantium aliquid consectetur similique
+                  repellendus accusamus minus illo.
+                </p>
               </div>
             </div>
-          </Slide>
+            <div className="column is-4">
+              <img src={section2} alt="random bg" />
+            </div>
+          </div>
         </section>
         <section
           className="is-medium has-background is-usp"
@@ -342,39 +346,12 @@ class Landing extends Component {
             </div>{" "}
           </div>{" "}
         </section>
-        <section className="container connect" style={{ marginTop: "13rem" }}>
-          <Fade bottom>
-            <h2>Connect</h2>
-            <div className="social-container">
-              <a
-                href="https://www.facebook.com/yeondam.park"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <div className="social-item">
-                  <i className="fab fa-facebook-f" />
-                </div>
-              </a>
-              <a
-                href="https://www.twitter.com/lloydpark88"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <div className="social-item">
-                  <i className="fab fa-twitter" />
-                </div>
-              </a>
-              <a
-                href="https://www.github.com/yeondam88"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <div className="social-item">
-                  <i className="fab fa-github" />
-                </div>
-              </a>
-            </div>
-          </Fade>
+        <section className="container connect" style={{ marginTop: "5rem" }}>
+          <img
+            src={social_media}
+            alt="social media"
+            style={{ height: "300px" }}
+          />
         </section>
       </Fragment>
     );

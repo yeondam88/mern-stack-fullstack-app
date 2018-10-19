@@ -190,7 +190,7 @@ class Landing extends Component {
           style={{ marginTop: "10rem", marginBottom: "10rem" }}
         >
           <div className="columns">
-            <div className="column is-8">
+            <div className="column is-7">
               <div className="banner-content">
                 <h2 className="title is-1">Built for Developers</h2>
                 <p style={{ width: "50%", textAlign: "center" }}>
@@ -200,7 +200,7 @@ class Landing extends Component {
                 </p>
               </div>
             </div>
-            <div className="column is-4">
+            <div className="column is-5">
               <img src={section2} alt="random bg" />
             </div>
           </div>

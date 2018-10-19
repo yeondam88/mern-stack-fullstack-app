@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
-import icon1 from "../../images/social_banner_1.svg";
+import icon1 from "../../images/social_banner_4.svg";
 import icon2 from "../../images/social_banner_2.svg";
 import icon3 from "../../images/social_banner_3.svg";
 import bg from "../../images/devconnector-bg.jpg";
@@ -83,7 +83,7 @@ class Landing extends Component {
         </section>{" "}
         <section
           className="is-medium has-background is-usp"
-          style={{ marginTop: "10rem" }}
+          style={{ marginTop: "13rem" }}
         >
           <div className="container">
             <div className="columns">
@@ -92,18 +92,21 @@ class Landing extends Component {
                   <div className="card is-usp user-profile landing-card">
                     <div
                       style={{
-                        textAlign: "center"
+                        textAlign: "center",
+                        minHeight: "300px"
                       }}
                     >
-                      <img src={icon1} alt="logo" width="200px" />
+                      <img src={icon1} alt="logo" />
                     </div>{" "}
-                    <hr className="spacer is-1" />
-                    <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
+                    <h2 className="title is-3 is-spaced">
+                      {" "}
+                      Awesome dashboard{" "}
+                    </h2>{" "}
                     <p className="subtitle is-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.In
-                      dicta quaerat est ? Dolore, recusandae voluptatum ad nihil
-                      quod nesciunt nulla quidem magni dignissimos laudantium
-                      alias error dolorum obcaecati est eius.{" "}
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aliquam egestas vel mi quis euismod. Donec blandit
+                      porttitor turpis. Curabitur vestibulum dignissim diam, id
+                      varius neque vulputate vitae.
                     </p>{" "}
                   </div>{" "}
                 </Fade>
@@ -113,22 +116,21 @@ class Landing extends Component {
                   <div className="card is-usp user-profile landing-card">
                     <div
                       style={{
-                        textAlign: "center"
+                        textAlign: "center",
+                        minHeight: "300px"
                       }}
                     >
-                      <img
-                        src={icon2}
-                        alt="logo"
-                        style={{ width: "200px", height: "180px" }}
-                      />
+                      <img src={icon2} alt="logo" />
                     </div>{" "}
-                    <hr className="spacer is-1" />
-                    <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
+                    <h2 className="title is-3 is-spaced">
+                      {" "}
+                      Connect With Developers{" "}
+                    </h2>{" "}
                     <p className="subtitle is-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.In
-                      dicta quaerat est ? Dolore, recusandae voluptatum ad nihil
-                      quod nesciunt nulla quidem magni dignissimos laudantium
-                      alias error dolorum obcaecati est eius.{" "}
+                      Aliquam luctus enim ac ex maximus congue. Nullam quis
+                      massa nec diam eleifend volutpat. Sed tempus tristique
+                      risus eget dapibus. Vivamus finibus sed dui at pretium.
+                      Donec et egestas libero.
                     </p>{" "}
                   </div>{" "}
                 </Fade>
@@ -138,25 +140,28 @@ class Landing extends Component {
                   <div className="card is-usp user-profile landing-card">
                     <div
                       style={{
-                        textAlign: "center"
+                        textAlign: "center",
+                        maxHeight: "300px"
                       }}
                     >
-                      <img src={icon3} alt="logo" width="200px" />
+                      <img src={icon3} alt="logo" />
                     </div>{" "}
-                    <hr className="spacer is-1" />
-                    <h3 className="title is-4 is-spaced"> Connection </h3>{" "}
+                    <h2 className="title is-3 is-spaced">
+                      {" "}
+                      Building applications{" "}
+                    </h2>{" "}
                     <p className="subtitle is-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.In
-                      dicta quaerat est ? Dolore, recusandae voluptatum ad nihil
-                      quod nesciunt nulla quidem magni dignissimos laudantium
-                      alias error dolorum obcaecati est eius.{" "}
+                      Proin pulvinar tincidunt varius. Morbi tempus sem sapien,
+                      vel blandit diam convallis vel. Aliquam erat volutpat.
+                      Praesent luctus, justo non mollis vulputate, eros massa
+                      convallis leo.
                     </p>{" "}
                   </div>{" "}
                 </Fade>
               </div>{" "}
             </div>{" "}
           </div>{" "}
-        </section>{" "}
+        </section>
         <section
           className="container"
           style={{ marginTop: "10rem", marginBottom: "10rem" }}
@@ -196,7 +201,148 @@ class Landing extends Component {
             </div>
           </Slide>
         </section>
-        <section className="container connect">
+        <section
+          className="is-medium has-background is-usp"
+          style={{ marginTop: "13rem" }}
+        >
+          <h2 className="title is-2 is-spaced" style={{ textAlign: "center" }}>
+            Find an Events
+          </h2>
+          <div className="container" style={{ paddingBottom: "6rem" }}>
+            <div className="columns">
+              <div className="column is-3">
+                <Fade bottom delay={1200}>
+                  <div
+                    className="card is-usp user-profile landing-card"
+                    style={{ padding: "0" }}
+                  >
+                    <div
+                      className="card-bg"
+                      style={{
+                        textAlign: "center",
+                        minHeight: "300px",
+                        position: "relative",
+                        background:
+                          "url(https://source.unsplash.com/600x400/?event)"
+                      }}
+                    />{" "}
+                    <div className="card-content">
+                      <h2 className="title is-3 is-spaced"> Local Event </h2>{" "}
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A eligendi soluta nulla asperiores velit ullam
+                        saepe corrupti vel.
+                      </p>
+                    </div>
+                  </div>{" "}
+                </Fade>
+              </div>{" "}
+              <div className="column is-3">
+                <Fade bottom delay={1400}>
+                  <div
+                    className="card is-usp user-profile landing-card"
+                    style={{ padding: "0" }}
+                  >
+                    <div
+                      style={{
+                        textAlign: "center",
+                        minHeight: "300px"
+                      }}
+                    >
+                      <div
+                        className="card-bg"
+                        style={{
+                          textAlign: "center",
+                          minHeight: "300px",
+                          position: "relative",
+                          background:
+                            "url(https://source.unsplash.com/600x400/?beach)"
+                        }}
+                      />
+                    </div>{" "}
+                    <div className="card-content">
+                      <h2 className="title is-3 is-spaced"> Conferences</h2>{" "}
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A eligendi soluta nulla asperiores velit ullam
+                        saepe corrupti vel.
+                      </p>
+                    </div>
+                  </div>{" "}
+                </Fade>
+              </div>{" "}
+              <div className="column is-3">
+                <Fade bottom delay={1600}>
+                  <div
+                    className="card is-usp user-profile landing-card"
+                    style={{ padding: "0" }}
+                  >
+                    <div
+                      style={{
+                        textAlign: "center",
+                        maxHeight: "300px"
+                      }}
+                    >
+                      <div
+                        className="card-bg"
+                        style={{
+                          textAlign: "center",
+                          minHeight: "300px",
+                          position: "relative",
+                          background:
+                            "url(https://source.unsplash.com/600x400/?car)"
+                        }}
+                      />
+                    </div>{" "}
+                    <div className="card-content">
+                      <h2 className="title is-3 is-spaced"> Hakcerthon</h2>{" "}
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A eligendi soluta nulla asperiores velit ullam
+                        saepe corrupti vel.
+                      </p>
+                    </div>
+                  </div>{" "}
+                </Fade>
+              </div>{" "}
+              <div className="column is-3">
+                <Fade bottom delay={1600}>
+                  <div
+                    className="card is-usp user-profile landing-card"
+                    style={{ padding: "0" }}
+                  >
+                    <div
+                      style={{
+                        textAlign: "center",
+                        maxHeight: "300px"
+                      }}
+                    >
+                      <div
+                        className="card-bg"
+                        style={{
+                          textAlign: "center",
+                          minHeight: "300px",
+                          position: "relative",
+                          background:
+                            "url(https://source.unsplash.com/600x400/?music)"
+                        }}
+                      />
+                    </div>{" "}
+                    <div className="card-content">
+                      <h2 className="title is-3 is-spaced"> Career Event</h2>{" "}
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A eligendi soluta nulla asperiores velit ullam
+                        saepe corrupti vel.
+                      </p>
+                    </div>
+                  </div>{" "}
+                </Fade>
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
+        </section>
+        <section className="container connect" style={{ marginTop: "13rem" }}>
           <Fade bottom>
             <h2>Connect</h2>
             <div className="social-container">

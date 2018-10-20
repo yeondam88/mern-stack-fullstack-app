@@ -52,7 +52,7 @@ class ProfileCreds extends Component {
     }
 
     return (
-      <div className="card user-profile">
+      <div className="card featured-banner">
         <div className="edu">
           <h4 className="title">Education</h4>
           {education.length > 0 ? (

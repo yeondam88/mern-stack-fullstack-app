@@ -6,7 +6,7 @@ class ProfileSideBar extends Component {
   render() {
     const { profile } = this.props;
     return (
-      <div className="card user-profile">
+      <div className="card featured-banner">
         <div className="hero">
           <div className="hero-body">
             <div className="inner-container" />

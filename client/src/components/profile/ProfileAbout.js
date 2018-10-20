@@ -14,7 +14,7 @@ class ProfileAbout extends Component {
       );
     });
     return (
-      <div className="card user-profile profile-about">
+      <div className="card featured-banner profile-about">
         <div className="columns is-centered is-margin-auto">
           <div className="column is-12 is-10-fullhd">
             <img

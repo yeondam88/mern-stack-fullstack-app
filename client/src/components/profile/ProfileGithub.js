@@ -81,7 +81,7 @@ class ProfileGithub extends Component {
     console.log(repos);
     return (
       <div
-        className="github-repos card user-profile is-fullheight"
+        className="github-repos card featured-banner is-fullheight"
         style={{
           height: "100%",
           justifyContent: "center",

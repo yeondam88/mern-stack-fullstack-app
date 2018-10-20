@@ -91,7 +91,7 @@ class Landing extends Component {
             <div className="columns">
               <div className="column is-4">
                 <Fade bottom delay={1200}>
-                  <div className="card is-usp user-profile landing-card">
+                  <div className="card is-usp featured-banner landing-card">
                     <div
                       style={{
                         textAlign: "center",
@@ -115,7 +115,7 @@ class Landing extends Component {
               </div>{" "}
               <div className="column is-4">
                 <Fade bottom delay={1400}>
-                  <div className="card is-usp user-profile landing-card">
+                  <div className="card is-usp featured-banner landing-card">
                     <div
                       style={{
                         textAlign: "center",
@@ -139,7 +139,7 @@ class Landing extends Component {
               </div>{" "}
               <div className="column is-4">
                 <Fade bottom delay={1600}>
-                  <div className="card is-usp user-profile landing-card">
+                  <div className="card is-usp featured-banner landing-card">
                     <div
                       style={{
                         textAlign: "center",
@@ -217,7 +217,7 @@ class Landing extends Component {
               <div className="column is-3">
                 <Fade bottom delay={1200}>
                   <div
-                    className="card is-usp user-profile landing-card"
+                    className="card is-usp featured-banner landing-card"
                     style={{ padding: "0" }}
                   >
                     <div
@@ -244,7 +244,7 @@ class Landing extends Component {
               <div className="column is-3">
                 <Fade bottom delay={1400}>
                   <div
-                    className="card is-usp user-profile landing-card"
+                    className="card is-usp featured-banner landing-card"
                     style={{ padding: "0" }}
                   >
                     <div
@@ -278,7 +278,7 @@ class Landing extends Component {
               <div className="column is-3">
                 <Fade bottom delay={1600}>
                   <div
-                    className="card is-usp user-profile landing-card"
+                    className="card is-usp featured-banner landing-card"
                     style={{ padding: "0" }}
                   >
                     <div
@@ -312,7 +312,7 @@ class Landing extends Component {
               <div className="column is-3">
                 <Fade bottom delay={1600}>
                   <div
-                    className="card is-usp user-profile landing-card"
+                    className="card is-usp featured-banner landing-card"
                     style={{ padding: "0" }}
                   >
                     <div

@@ -68,6 +68,9 @@ body {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-width: 360px;
+  max-width: 360px;
+  min-height: 502px;
   margin: 0 auto;
   background-color: white;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05);
@@ -313,6 +316,26 @@ body {
   padding-top: 2rem;
   margin-top: 1rem;
   font-weight: 100 !important;
+}
+
+.card.featured-banner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .05);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .05);
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transition-duration: 172ms;
+  -o-transition-duration: 172ms;
+  transition-duration: 172ms;
+  will-change: transform, box-shadow;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
 }
 
 .card-content .title {

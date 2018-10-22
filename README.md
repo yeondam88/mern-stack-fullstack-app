@@ -33,6 +33,6 @@ Currently implemented features..
 - Remove Comment
 
 Will be adding these things..
-- More detail in profile component
-- follow / unfollow
-- deploy to web
+* [ ] More detail in profile component 🚀
+* [ ] follow / unfollow 🐦
+* [x] deploy to web 🔥

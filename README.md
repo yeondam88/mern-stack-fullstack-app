@@ -37,3 +37,4 @@ Will be adding these things..
 * [ ] More detail in profile component 🚀
 * [ ] follow / unfollow 🐦
 * [x] deploy to web 🔥
+* [ ] Deploy bug found. need to fix.

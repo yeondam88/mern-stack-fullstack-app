@@ -38,3 +38,4 @@ Will be adding these things..
 * [ ] follow / unfollow 🐦
 * [x] deploy to web 🔥
 * [ ] Deploy bug found. need to fix.
+* [ ] Investigate bug on loading.. 

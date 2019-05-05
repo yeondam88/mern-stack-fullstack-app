@@ -1,5 +1,7 @@
 ## [Devconnector](https://mern-stack-devconnector.herokuapp.com/) Click to see a Live
 
+Devconnector v2 is still developing... [Repo](https://github.com/yeondam88/devconnector_v2)
+
 This is Udemy course by Brad(Travery Media).
 I am building Mini developer social network app by using MERN stack.
 I've added my custom styled with overall application, and implemented features on my own.

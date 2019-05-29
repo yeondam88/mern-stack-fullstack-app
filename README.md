@@ -35,9 +35,3 @@ Currently implemented features..
 - Add Comment on post
 - Remove Comment
 
-Will be adding these things..
-* [ ] More detail in profile component 🚀
-* [ ] follow / unfollow 🐦
-* [x] deploy to web 🔥
-* [ ] Deploy bug found. need to fix.
-* [ ] Investigate bug on loading.. 
